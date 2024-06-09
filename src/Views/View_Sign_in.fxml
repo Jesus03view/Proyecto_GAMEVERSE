@@ -15,9 +15,9 @@
         <URL value="@/Style/Styles.css" />
     </stylesheets>
    <children>
-      <Pane prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" />
-      <Pane layoutY="620.0" prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" />
-      <Pane layoutX="460.0" layoutY="80.0" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: 238F8D;" stylesheets="@../Style/Styles.css">
+      <Pane prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane layoutY="620.0" prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Pane layoutX="460.0" layoutY="80.0" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: 238F8D;" stylesheets="@../Style/Styles.css" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="440.0" AnchorPane.topAnchor="80.0">
          <children>
             <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="125.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
