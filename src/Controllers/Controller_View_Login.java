@@ -1,14 +1,23 @@
 package Controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class Controller_View_Login implements Initializable {
 
@@ -51,6 +60,27 @@ public class Controller_View_Login implements Initializable {
 
         } else if (event.getSource() == btn_Registrar) {
             
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/View_Sign_in.fxml"));
+                Parent root = loader.load();
+
+                Controller_View_Sign_in controller = loader.getController();
+
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+                stage.setOnCloseRequest((WindowEvent value) -> {
+                    controller.closeWindow();
+                });
+                stage.show();
+
+                Stage miStage = (Stage) this.btn_Login.getScene().getWindow();
+                miStage.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Controller_View_Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
