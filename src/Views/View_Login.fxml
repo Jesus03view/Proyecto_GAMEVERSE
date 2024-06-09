@@ -18,16 +18,17 @@
    <children>
       <Pane prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Pane layoutY="620.0" prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Pane layoutX="450.0" layoutY="80.0" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: 238F8D;" stylesheets="@../Style/Styles.css">
+      <Pane layoutX="450.0" layoutY="80.0" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: 238F8D;" stylesheets="@../Style/Styles.css" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="80.0">
          <children>
             <ImageView fitHeight="150.0" fitWidth="300.0" layoutX="100.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/Logo.png" />
                </image>
             </ImageView>
-            <TextField focusTraversable="false" layoutX="77.0" layoutY="160.0" prefHeight="40.0" prefWidth="250.0" promptText="User" styleClass="txt_entrada" />
-            <TextField focusTraversable="false" layoutX="77.0" layoutY="214.0" prefHeight="40.0" prefWidth="250.0" promptText="Password" styleClass="txt_entrada" />
-            <Button layoutX="100.0" layoutY="292.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="210.0" styleClass="btn_login" text="Login" textFill="WHITE">
+            <TextField fx:id="txt_User" focusTraversable="false" layoutX="77.0" layoutY="160.0" prefHeight="40.0" prefWidth="250.0" promptText="User" styleClass="txt_entrada" />
+            <TextField fx:id="txt_Password" focusTraversable="false" layoutX="77.0" layoutY="214.0" prefHeight="40.0" prefWidth="250.0" promptText="Password" styleClass="txt_entrada" />
+            <Text fx:id="txt_error" fill="RED" layoutX="85.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" visible="false" />
+            <Button fx:id="btn_Login" layoutX="100.0" layoutY="292.0" mnemonicParsing="false" onAction="#EventAction" prefHeight="55.0" prefWidth="210.0" styleClass="btn_login" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -37,7 +38,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Text>
-            <Hyperlink layoutX="205.0" layoutY="349.0" text="Singn in" textFill="#3da1ee">
+            <Hyperlink fx:id="btn_Registrar" layoutX="205.0" layoutY="349.0" onAction="#EventAction" text="Singn in" textFill="#3da1ee">
                <font>
                   <Font size="15.0" />
                </font>
