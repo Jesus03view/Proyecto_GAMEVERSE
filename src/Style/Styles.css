@@ -17,10 +17,25 @@
 .btn_login{
 
     -fx-background-color: #228B22;
+    -fx-cursor: hand;
 }
 
 .btn_login:hover{
 
     -fx-background-color: #459D45;
+}
+
+.btn_cancelar{
+
+    -fx-background-color: none;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 1.5px;
+    -fx-cursor: hand;
+}
+
+.btn_cancelar:hover{
+    
+    -fx-background-color: #FFFFFF;        
+    -fx-text-fill: #000000;
 }
 /*Otros estilos*/
