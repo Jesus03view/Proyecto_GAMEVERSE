@@ -34,8 +34,37 @@
 }
 
 .btn_cancelar:hover{
-    
-    -fx-background-color: #FFFFFF;        
+
+    -fx-background-color: #FFFFFF;
     -fx-text-fill: #000000;
 }
 /*Otros estilos*/
+
+/*Stiles View_GAME_VERSE*/
+
+.btn_nav_bar{
+
+    -fx-background-color: none;
+    -fx-pref-width: 160px;
+    -fx-pref-height: 50px;
+    -fx-cursor: hand;
+}
+
+.btn_nav_bar:hover{
+
+    -fx-background-color: #557F87;
+}
+
+.btn_menu_left{
+
+    -fx-background-color: none;
+    -fx-pref-width: 188px;
+    -fx-pref-height: 72px;
+    -fx-cursor: hand;
+}
+
+.btn_menu_left:hover{
+
+    -fx-background-color: #557F87;
+}
+/*Stiles View_GAME_VERSE*/
