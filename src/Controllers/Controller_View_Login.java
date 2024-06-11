@@ -55,11 +55,31 @@ public class Controller_View_Login implements Initializable {
             } else {
 
                 txt_error.setVisible(false);
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/View_GAME_VERSE.fxml"));
+                    Parent root = loader.load();
 
+                    Controller_View_GAME_VERSE controller = loader.getController();
+
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+
+                    stage.initModality(Modality.APPLICATION_MODAL);
+                    stage.setScene(scene);
+                    stage.setOnCloseRequest((WindowEvent value) -> {
+                        controller.closeWindow();
+                    });
+                    stage.show();
+
+                    Stage miStage = (Stage) this.btn_Login.getScene().getWindow();
+                    miStage.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(Controller_View_Login.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
 
         } else if (event.getSource() == btn_Registrar) {
-            
+
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/View_Sign_in.fxml"));
                 Parent root = loader.load();
