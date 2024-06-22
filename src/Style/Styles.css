@@ -67,4 +67,12 @@
 
     -fx-background-color: #557F87;
 }
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: #F4F4F4;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #CACACA;
+}
 /*Stiles View_GAME_VERSE*/

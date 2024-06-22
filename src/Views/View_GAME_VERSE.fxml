@@ -132,13 +132,13 @@
             </VBox>
          </children>
       </Pane>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="700.0" prefWidth="1040.0" style="-fx-background-color: #FFFFFF;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
+      <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="700.0" prefWidth="1040.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../Style/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
          <content>
-            <AnchorPane prefHeight="1500.0" prefWidth="1035.0" style="-fx-background-color: #F4F4F4;">
+            <AnchorPane prefHeight="1700.0" prefWidth="1035.0" style="-fx-background-color: #F4F4F4;">
                <children>
                   <Pane layoutX="70.0" layoutY="30.0" prefHeight="440.0" prefWidth="660.0" style="-fx-background-color: #CACACA;" AnchorPane.rightAnchor="308.0" />
                   <Pane layoutX="754.0" layoutY="30.0" prefHeight="440.0" prefWidth="202.0" style="-fx-background-color: #CACACA;" AnchorPane.rightAnchor="86.0" />
-                  <FlowPane columnHalignment="CENTER" layoutX="67.0" layoutY="516.0" prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #CACACA;" AnchorPane.rightAnchor="68.0">
+                  <FlowPane columnHalignment="CENTER" layoutX="67.0" layoutY="516.0" prefHeight="300.0" prefWidth="900.0" prefWrapLength="0.0" style="-fx-background-color: #CACACA;" AnchorPane.bottomAnchor="284.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="516.0">
                      <children>
                         <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
                            <children>
@@ -185,10 +185,6 @@
                               </ImageView>
                            </children>
                         </Pane>
-                     </children>
-                  </FlowPane>
-                  <FlowPane layoutX="67.0" layoutY="826.0" prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #CACACA;">
-                     <children>
                         <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
@@ -234,10 +230,6 @@
                               </ImageView>
                            </children>
                         </Pane>
-                     </children>
-                  </FlowPane>
-                  <FlowPane layoutX="67.0" layoutY="1136.0" prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #CACACA;">
-                     <children>
                         <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
