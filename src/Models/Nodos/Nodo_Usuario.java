@@ -1,5 +1,5 @@
 package Models.Nodos;
 
-public class Usuario {
+public class Nodo_Usuario {
     
 }

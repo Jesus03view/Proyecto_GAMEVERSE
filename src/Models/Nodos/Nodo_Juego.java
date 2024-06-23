@@ -1,5 +1,5 @@
 package Models.Nodos;
 
-public class Juego {
+public class Nodo_Juego {
     
 }
