@@ -12,6 +12,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
@@ -62,6 +65,12 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private VBox panePresent;
     @FXML
     private WebView webView;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private FlowPane flowPane;
+    @FXML
+    private AnchorPane anchorP;
 
     /**
      * Initializes the controller class.
@@ -69,6 +78,10 @@ public class Controller_View_GAME_VERSE implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        anchorP.prefWidthProperty().bind(scrollPane.widthProperty());
+        anchorP.prefHeightProperty().bind(scrollPane.heightProperty());
+        flowPane.prefWidthProperty().bind(anchorP.widthProperty());
+        flowPane.prefHeightProperty().bind(anchorP.heightProperty());    
     }
 
     public void closeWindow() {
