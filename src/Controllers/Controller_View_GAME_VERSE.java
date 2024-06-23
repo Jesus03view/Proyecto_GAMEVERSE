@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,7 +13,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class Controller_View_GAME_VERSE implements Initializable {
@@ -37,6 +45,28 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private Button btn_CerrarS;
     @FXML
     private Pane panelAmigos;
+    @FXML
+    private Button btn_ListD;
+    @FXML
+    private Button btn_Shop;
+    @FXML
+    private Button btn_Biblioteca;
+    @FXML
+    private Button btn_game1;
+    @FXML
+    private Button btn_game2;
+    @FXML
+    private Button btn_game3;
+    @FXML
+    private Button btn_game4;
+    @FXML
+    private Button btn_game5;
+    @FXML
+    private Button btn_game6;
+    @FXML
+    private VBox panePresent;
+    @FXML
+    private WebView webView;
 
     /**
      * Initializes the controller class.
@@ -99,6 +129,27 @@ public class Controller_View_GAME_VERSE implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(Controller_View_GAME_VERSE.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+    }
+
+    @FXML
+    private void EventAction2(ActionEvent e) {
+
+        if (e.getSource().equals(btn_game1)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+            
+            webEng.load("https://youtu.be/NnyCWsA6KSI?si=9fRLdvVaOesBKBik");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);           
         }
     }
 }

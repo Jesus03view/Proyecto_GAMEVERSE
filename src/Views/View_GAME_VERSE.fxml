@@ -13,10 +13,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller_View_GAME_VERSE">
     <stylesheets>
@@ -141,15 +141,19 @@
       </Pane>
       <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="700.0" prefWidth="1040.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../Style/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
          <content>
-            <AnchorPane prefHeight="400.0" prefWidth="1035.0" style="-fx-background-color: #F4F4F4;">
+            <AnchorPane prefHeight="400.0" prefWidth="1035.0" style="-fx-background-color: F4F4F4;">
                <children>
-                  <Pane layoutX="70.0" layoutY="30.0" prefHeight="440.0" prefWidth="660.0" style="-fx-background-color: #CACACA;" AnchorPane.rightAnchor="308.0">
+                  <AnchorPane layoutX="73.0" layoutY="28.0" prefHeight="442.0" prefWidth="664.0" AnchorPane.bottomAnchor="1276.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="30.0">
                      <children>
-                        <MediaView fitHeight="440.0" fitWidth="660.0" />
-                     </children></Pane>
-                  <Pane layoutX="754.0" layoutY="30.0" prefHeight="438.0" prefWidth="215.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="58.0">
+                        <VBox fx:id="panePresent" alignment="CENTER" prefHeight="440.0" prefWidth="666.0">
+                           <children>
+                              <WebView fx:id="webView" focusTraversable="false" prefHeight="473.0" prefWidth="666.0" />
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+                  <Pane layoutX="754.0" layoutY="30.0" prefHeight="438.0" prefWidth="215.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="30.0">
                      <children>
-                        <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="437.0" prefWidth="212.0" styleClass="track" vbarPolicy="NEVER">
+                        <ScrollPane focusTraversable="false" hbarPolicy="NEVER" layoutX="2.0" layoutY="34.0" prefHeight="437.0" prefWidth="212.0" styleClass="track" vbarPolicy="NEVER">
                            <content>
                               <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" hgap="20.0" prefHeight="433.0" prefWidth="213.0" prefWrapLength="600.0" rowValignment="TOP" vgap="20.0">
                                  <children>
@@ -211,6 +215,11 @@
                               </FlowPane>
                            </content>
                         </ScrollPane>
+                        <Text layoutX="53.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relacionado:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
                      </children></Pane>
                   <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" layoutX="67.0" layoutY="516.0" prefHeight="300.0" prefWidth="900.0" prefWrapLength="900.0" style="-fx-background-color: #CACACA;" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="516.0">
                      <children>
