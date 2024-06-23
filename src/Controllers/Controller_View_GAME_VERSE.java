@@ -1,6 +1,5 @@
 package Controllers;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,12 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -139,7 +134,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
             webView.getEngine().load(null);
             webView = new WebView();
             WebEngine webEng = webView.getEngine();
-            
+
             webEng.load("https://youtu.be/NnyCWsA6KSI?si=9fRLdvVaOesBKBik");
 
             webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
@@ -149,7 +144,85 @@ public class Controller_View_GAME_VERSE implements Initializable {
             });
 
             panePresent.getChildren().clear();
-            panePresent.getChildren().add(webView);           
+            panePresent.getChildren().add(webView);
+
+        } else if (e.getSource().equals(btn_game2)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/Wj3dUvGLjNQ?si=pzNhbJ-kjdDtw9HR");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+
+        } else if (e.getSource().equals(btn_game3)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/iYZpR51XgW0?si=1P6oqciFBlZoklTh");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game4)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/XhP3Xh4LMA8?si=jcdKbr_50Ulhy-m1");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game5)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/F3jePdO9_jc?si=4LEa6nbkl8cFSxLy");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+            
+        } else if (e.getSource().equals(btn_game6)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/cjd00TgL7NQ?si=mV292-Hitc9875Hl");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
         }
     }
 }
