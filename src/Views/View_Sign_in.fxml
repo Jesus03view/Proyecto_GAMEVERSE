@@ -10,38 +10,38 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #013F4C;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="Controllers.Controller_View_Sign_in">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #013F4C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller_View_Sign_in">
     <stylesheets>
         <URL value="@/Style/Styles.css" />
     </stylesheets>
-   <children>
-      <Pane prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Pane layoutY="620.0" prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Pane layoutX="460.0" layoutY="80.0" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: 238F8D;" stylesheets="@../Style/Styles.css" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="440.0" AnchorPane.topAnchor="80.0">
-         <children>
-            <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="125.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/Logo.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="txt_Nombre" focusTraversable="false" layoutX="77.0" layoutY="122.0" prefHeight="40.0" prefWidth="250.0" promptText="Nombre" styleClass="txt_entrada" />
-            <TextField fx:id="txt_Identificacion" focusTraversable="false" layoutX="77.0" layoutY="172.0" prefHeight="40.0" prefWidth="250.0" promptText="Identificación" styleClass="txt_entrada" />
-            <TextField fx:id="txt_Celular" focusTraversable="false" layoutX="77.0" layoutY="222.0" prefHeight="40.0" prefWidth="250.0" promptText="Celular" styleClass="txt_entrada" />
-            <TextField fx:id="txt_Correo" focusTraversable="false" layoutX="77.0" layoutY="272.0" prefHeight="40.0" prefWidth="250.0" promptText="Correo" styleClass="txt_entrada" />
-            <TextField fx:id="txt_Nombre_jugador" focusTraversable="false" layoutX="77.0" layoutY="322.0" prefHeight="40.0" prefWidth="250.0" promptText="Nobre de jugador" styleClass="txt_entrada" />
-            <PasswordField fx:id="txt_Password_1" focusTraversable="false" layoutX="77.0" layoutY="375.0" prefHeight="40.0" prefWidth="250.0" promptText="Contraseña" styleClass="txt_entrada" />
-            <PasswordField fx:id="txt_Password_2" focusTraversable="false" layoutX="77.0" layoutY="426.0" prefHeight="40.0" prefWidth="250.0" promptText="Contraseña" styleClass="txt_entrada" />
-            <Button fx:id="btn_cancelar" layoutX="77.0" layoutY="490.0" mnemonicParsing="false" onAction="#EventAction" prefHeight="40.0" prefWidth="100.0" styleClass="btn_cancelar" text="Cancelar" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Button>
-            <Button fx:id="btn_aceptar" layoutX="187.0" layoutY="490.0" mnemonicParsing="false" onAction="#EventAction" prefHeight="40.0" prefWidth="140.0" styleClass="btn_login" text="Aceptar" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
-   </children>
+    <children>
+        <Pane prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Pane layoutY="620.0" prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <Pane layoutX="460.0" layoutY="80.0" prefHeight="540.0" prefWidth="400.0" stylesheets="@../Style/Styles.css" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="440.0" AnchorPane.topAnchor="80.0">
+            <children>
+                <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="125.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/Logo.png" />
+                    </image>
+                </ImageView>
+                <TextField fx:id="txt_Nombre" focusTraversable="false" layoutX="77.0" layoutY="122.0" prefHeight="40.0" prefWidth="250.0" promptText="Nombre" styleClass="txt_entrada" />
+                <TextField fx:id="txt_Identificacion" focusTraversable="false" layoutX="77.0" layoutY="172.0" prefHeight="40.0" prefWidth="250.0" promptText="Identificación" styleClass="txt_entrada" />
+                <TextField fx:id="txt_Celular" focusTraversable="false" layoutX="77.0" layoutY="222.0" prefHeight="40.0" prefWidth="250.0" promptText="Celular" styleClass="txt_entrada" />
+                <TextField fx:id="txt_Correo" focusTraversable="false" layoutX="77.0" layoutY="272.0" prefHeight="40.0" prefWidth="250.0" promptText="Correo" styleClass="txt_entrada" />
+                <TextField fx:id="txt_Nombre_jugador" focusTraversable="false" layoutX="77.0" layoutY="322.0" prefHeight="40.0" prefWidth="250.0" promptText="Nobre de jugador" styleClass="txt_entrada" />
+                <PasswordField fx:id="txt_Password_1" focusTraversable="false" layoutX="77.0" layoutY="375.0" prefHeight="40.0" prefWidth="250.0" promptText="Contraseña" styleClass="txt_entrada" />
+                <PasswordField fx:id="txt_Password_2" focusTraversable="false" layoutX="77.0" layoutY="426.0" prefHeight="40.0" prefWidth="250.0" promptText="Contraseña" styleClass="txt_entrada" />
+                <Button fx:id="btn_cancelar" layoutX="77.0" layoutY="490.0" mnemonicParsing="false" onAction="#EventAction" prefHeight="40.0" prefWidth="100.0" styleClass="btn_cancelar" text="Cancelar" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_aceptar" layoutX="187.0" layoutY="490.0" mnemonicParsing="false" onAction="#EventAction" prefHeight="40.0" prefWidth="140.0" styleClass="btn_login" text="Aceptar" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+    </children>
 </AnchorPane>
