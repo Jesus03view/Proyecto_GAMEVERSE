@@ -69,10 +69,49 @@
 }
 
 .scroll-pane .scroll-bar:vertical .track {
+
     -fx-background-color: #F4F4F4;
 }
 
 .scroll-pane .scroll-bar:vertical .thumb {
+
     -fx-background-color: #CACACA;
+}
+
+.btn_Perfil{
+
+    -fx-background-color: #557f87;
+    -fx-background-radius: 50px;
+}
+
+#panelP{
+
+    -fx-background-color: #557F87;
+    -fx-background-radius: 10px;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+.btnNavF{
+
+    -fx-background-color: none;
+    -fx-background-radius: 8px;
+}
+
+.btnNavF:hover{
+
+    -fx-background-color: #ffffff;
+}
+
+.btnAfter{
+
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+}
+
+#btnPerfil:hover .text-field{
+
+    -fx-underline: true;
 }
 /*Stiles View_GAME_VERSE*/
