@@ -15,7 +15,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -63,8 +62,7 @@ public class Controller_View_Login implements Initializable {
 
                     Scene scene = new Scene(root);
                     Stage stage = new Stage();
-
-                    stage.initModality(Modality.APPLICATION_MODAL);
+                    
                     stage.setScene(scene);
                     stage.setOnCloseRequest((WindowEvent value) -> {
                         controller.closeWindow();
@@ -88,8 +86,7 @@ public class Controller_View_Login implements Initializable {
 
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
-
-                stage.initModality(Modality.APPLICATION_MODAL);
+                
                 stage.setScene(scene);
                 stage.setOnCloseRequest((WindowEvent value) -> {
                     controller.closeWindow();
