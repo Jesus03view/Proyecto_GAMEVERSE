@@ -1,5 +1,7 @@
 package Controllers;
 
+import Models.EstructurasDeDatos.ListaDobleUsuario;
+import Models.ModeloDeDatos;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +22,8 @@ import javafx.stage.WindowEvent;
 
 public class Controller_View_Login implements Initializable {
 
+    private ListaDobleUsuario list_U = ModeloDeDatos.obtenerInstancia().getListaU();
+    
     @FXML
     private TextField txt_User;
     @FXML
@@ -36,7 +40,7 @@ public class Controller_View_Login implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // TODO        
     }
 
     @FXML

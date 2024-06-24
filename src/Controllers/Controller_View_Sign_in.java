@@ -1,5 +1,7 @@
 package Controllers;
 
+import Models.EstructurasDeDatos.ListaDobleUsuario;
+import Models.ModeloDeDatos;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,6 +20,9 @@ import javafx.stage.Stage;
 
 public class Controller_View_Sign_in implements Initializable {
 
+    
+    private ListaDobleUsuario list_U = ModeloDeDatos.obtenerInstancia().getListaU();
+    
     @FXML
     private TextField txt_Nombre;
     @FXML
