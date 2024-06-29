@@ -38,6 +38,19 @@
 
 /*Stiles View_GAME_VERSE*/
 
+.bacgroundNavBar{
+    -fx-background-color: #444444;
+}
+
+.bacgroundBoddy{
+    -fx-background-color: #BFBFBF;
+}
+
+.navFriends{
+    -fx-background-color:  #444444;
+    -fx-background-radius: 10px;
+}
+
 .btn_nav_bar {
     -fx-background-color: #444444;
     -fx-pref-width: 160px;
@@ -87,7 +100,7 @@
 .btnNavF {
     -fx-background-color: #444444;
     -fx-background-radius: 8px;
-    -fx-text-fill: #ffffff;    
+    -fx-text-fill: #ffffff;
 }
 
 .btnNavF:hover {
@@ -106,7 +119,7 @@
 
 .btn_Relacionado {
     -fx-background-color: #666666;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: #FFFFFF;    
 }
 
 .btn_Relacionado:hover {

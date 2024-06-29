@@ -15,6 +15,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -25,6 +30,7 @@ import javafx.stage.Stage;
 public class Controller_View_GAME_VERSE implements Initializable {
 
     private ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
+
     @FXML
     private Button btn_carrito;
     @FXML
@@ -71,13 +77,48 @@ public class Controller_View_GAME_VERSE implements Initializable {
     public Text labelNick;
     @FXML
     private Label txt_btn_P;
+    @FXML
+    private ImageView ImaLogo;
+    @FXML
+    private FlowPane flowpaneGames;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private AnchorPane anchorP;
+    @FXML
+    private AnchorPane AnchorPane;
+    @FXML
+    private Button btn_game7;
+    @FXML
+    private Button btn_game8;
+    @FXML
+    private Button btn_game9;
+    @FXML
+    private Button btn_game10;
+    @FXML
+    private Button btn_game11;
+    @FXML
+    private Button btn_game12;
+    @FXML
+    private Button btn_game13;
+    @FXML
+    private Button btn_game14;
+    @FXML
+    private Button btn_game15;
 
     /**
      * Initializes the controller class.
+     *
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO      
+        anchorP.prefWidthProperty().bind(scrollPane.widthProperty());
+        anchorP.prefHeightProperty().bind(scrollPane.heightProperty());
+        flowpaneGames.prefWidthProperty().bind(anchorP.widthProperty());
+        flowpaneGames.prefHeightProperty().bind(anchorP.heightProperty());
 
         listU.cargarDatosDesdeArchivoUsuarios();
     }
@@ -109,19 +150,30 @@ public class Controller_View_GAME_VERSE implements Initializable {
         }
     }
 
-    private boolean isDarkMode = false;
-    
-    private void toggleStylesheets(Stage stage) {
-        Scene scene = stage.getScene();
-        scene.getStylesheets().clear();
+    private void toggleStylesheets() {
+        Image image = new Image(getClass().getResourceAsStream("/Images/Logo.png"));
+        Image image2 = new Image(getClass().getResourceAsStream("/Images/Logo2.png"));
+        
+        String hoja = AnchorPane.getStylesheets().get(0);
+        String[] nombre = hoja.split("/");
+        int n = nombre.length;
 
-        if (isDarkMode) {
-            scene.getStylesheets().add(getClass().getResource("/Style/Styles.css").toExternalForm());
+        String comparador = nombre[n - 1];
+        String comparador2 = "Styles.css";
+
+        if (comparador.equals(comparador2) == true) {
+ 
+            AnchorPane.getStylesheets().clear();
+            AnchorPane.getStylesheets().add(getClass().getResource("/Style/Styles_Dark.css").toExternalForm());
+            
+            ImaLogo.setImage(image2);
         } else {
-            scene.getStylesheets().add(getClass().getResource("/Style/Styles_Dark.css").toExternalForm());
+            
+            AnchorPane.getStylesheets().clear();
+            AnchorPane.getStylesheets().add(getClass().getResource("/Style/Styles.css").toExternalForm());
+            
+            ImaLogo.setImage(image);
         }
-
-        isDarkMode = !isDarkMode;
     }
 
     @FXML
@@ -160,8 +212,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
                 Logger.getLogger(Controller_View_GAME_VERSE.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (e.getSource().equals(btn_ModO)) {
-            Stage stage = (Stage) this.btn_ModO.getScene().getWindow();
-            toggleStylesheets(stage);
+            toggleStylesheets();
         }
     }
 

@@ -42,6 +42,19 @@
 
 /*Stiles View_GAME_VERSE*/
 
+.bacgroundNavBar{
+    -fx-background-color:  #013F4C;
+}
+
+.bacgroundBoddy{
+    -fx-background-color: #F4F4F4;
+}
+
+.navFriends{
+    -fx-background-color:  #7EA8B0;
+    -fx-background-radius: 10px;
+}
+
 .btn_nav_bar{
 
     -fx-background-color: none;
@@ -117,6 +130,7 @@
 
 .btn_Relacionado{
     -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
 }
 
 .btn_Relacionado:hover{
