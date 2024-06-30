@@ -1,7 +1,10 @@
 package Controllers;
 
 import Models.EstructurasDeDatos.ListaDobleUsuario;
+import Models.EstructurasDeDatos.PilaStack_Juego;
 import Models.ModeloDeDatos;
+import Models.Nodos.Nodo_Juego;
+import Models.Nodos.Nodo_Usuario;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,6 +33,7 @@ import javafx.stage.Stage;
 public class Controller_View_GAME_VERSE implements Initializable {
 
     private ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
+    private PilaStack_Juego pila = ModeloDeDatos.obtenerInstancia().getPilaJ();
 
     @FXML
     private Button btn_carrito;
@@ -105,6 +109,12 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private Button btn_game14;
     @FXML
     private Button btn_game15;
+    @FXML
+    private Label labelModoO;
+    @FXML
+    private ImageView navFriends;
+    @FXML
+    private ImageView navAddFriends;
 
     /**
      * Initializes the controller class.
@@ -121,6 +131,14 @@ public class Controller_View_GAME_VERSE implements Initializable {
         flowpaneGames.prefHeightProperty().bind(anchorP.heightProperty());
 
         listU.cargarDatosDesdeArchivoUsuarios();
+
+        pila.cargarJuegos();
+        Nodo_Juego juego = pila.getJuegoNick(labelNick.getText());
+        
+        if (juego != null) {
+//            flowpaneGames.getChildren().clear();
+            crearJuegos(juego);
+        }
     }
 
     public Label getTxt_btn_P() {
@@ -153,7 +171,11 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private void toggleStylesheets() {
         Image image = new Image(getClass().getResourceAsStream("/Images/Logo.png"));
         Image image2 = new Image(getClass().getResourceAsStream("/Images/Logo2.png"));
-        
+        Image imagenav = new Image(getClass().getResourceAsStream("/Images/Icono_amigos2.png"));
+        Image imagenav2 = new Image(getClass().getResourceAsStream("/Images/Icono_amigos1.png"));
+        Image imagenavA = new Image(getClass().getResourceAsStream("/Images/Icono_add_Amigo1.png"));
+        Image imagenavA2 = new Image(getClass().getResourceAsStream("/Images/Icono_add_Amigo2.png"));
+
         String hoja = AnchorPane.getStylesheets().get(0);
         String[] nombre = hoja.split("/");
         int n = nombre.length;
@@ -162,17 +184,24 @@ public class Controller_View_GAME_VERSE implements Initializable {
         String comparador2 = "Styles.css";
 
         if (comparador.equals(comparador2) == true) {
- 
+
             AnchorPane.getStylesheets().clear();
             AnchorPane.getStylesheets().add(getClass().getResource("/Style/Styles_Dark.css").toExternalForm());
-            
+
             ImaLogo.setImage(image2);
-        } else {
+            navFriends.setImage(imagenav2);
+            navAddFriends.setImage(imagenavA2);
+            labelModoO.setText("Activado");
             
+        } else {
+
             AnchorPane.getStylesheets().clear();
             AnchorPane.getStylesheets().add(getClass().getResource("/Style/Styles.css").toExternalForm());
-            
+
             ImaLogo.setImage(image);
+            navFriends.setImage(imagenav);
+            navAddFriends.setImage(imagenavA);
+            labelModoO.setText("Desactivado");
         }
     }
 
@@ -313,5 +342,45 @@ public class Controller_View_GAME_VERSE implements Initializable {
             panePresent.getChildren().clear();
             panePresent.getChildren().add(webView);
         }
+    }
+
+    private void crearJuegos(Nodo_Juego juego) {
+
+        Pane pane = new Pane();
+        pane.prefWidth(180);
+        pane.prefHeight(300);
+        pane.setFocusTraversable(false);
+        pane.setId(juego.getNombre());
+
+        Image image = new Image(getClass().getResourceAsStream(juego.getURL_ima()));
+        ImageView imageV = new ImageView(image);
+        imageV.prefWidth(140);
+        imageV.prefHeight(180);
+        imageV.setLayoutX(20);
+        imageV.setLayoutY(10);
+
+        Pane pane2 = new Pane();
+        pane2.prefWidth(140);
+        pane2.prefHeight(100);
+        pane2.setFocusTraversable(false);
+        pane2.setLayoutX(20);
+        pane2.setLayoutY(200);
+
+        Text text1 = new Text("Juego Base");
+        text1.setLayoutX(0);
+        text1.setLayoutY(11);
+        Text text2 = new Text(juego.getNombre());
+        text2.setLayoutX(0);
+        text2.setLayoutY(35);
+        Text text3 = new Text("Precio:");
+        text3.setLayoutX(0);
+        text3.setLayoutY(80);
+        Text text4 = new Text("$ " + juego.getPrecio());
+        text4.setLayoutX(70);
+        text4.setLayoutX(80);
+
+        pane2.getChildren().addAll(text1, text2, text3, text4);
+        pane.getChildren().addAll(imageV, pane2);
+        flowpaneGames.getChildren().addAll(pane);
     }
 }
