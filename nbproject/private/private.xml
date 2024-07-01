@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Controllers/Controller_View_GAME_VERSE.java</file>
+            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Style/Styles.css</file>
+            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Models/EstructurasDeDatos/PilaStack_Juego.java</file>
+            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Archivos_Base_TXT/Archivo_Juegos_Tienda.txt</file>
+            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Controllers/Controller_View_Login.java</file>
+            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Views/View_GAME_VERSE.fxml</file>
+        </group>
     </open-files>
 </project-private>

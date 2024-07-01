@@ -4,10 +4,10 @@ import Models.EstructurasDeDatos.ListaDobleUsuario;
 import Models.EstructurasDeDatos.PilaStack_Juego;
 import Models.ModeloDeDatos;
 import Models.Nodos.Nodo_Juego;
-import Models.Nodos.Nodo_Usuario;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -115,6 +115,24 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private ImageView navFriends;
     @FXML
     private ImageView navAddFriends;
+    @FXML
+    private Button btn_Tarjeta;
+    @FXML
+    private Button btn_Nequi;
+    @FXML
+    private Button btn_Daviplata;
+    @FXML
+    private Pane datos_tarjeta;
+    @FXML
+    private Pane datos_nequi;
+    @FXML
+    private Pane datos_daviPlata;
+    @FXML
+    private Button cerrar_VPago;
+    @FXML
+    private Button btn_Pagar;
+    @FXML
+    private AnchorPane panelDePago;
 
     /**
      * Initializes the controller class.
@@ -134,10 +152,9 @@ public class Controller_View_GAME_VERSE implements Initializable {
 
         pila.cargarJuegos();
         Nodo_Juego juego = pila.getJuegoNick(labelNick.getText());
-        
+
         if (juego != null) {
-//            flowpaneGames.getChildren().clear();
-            crearJuegos(juego);
+            cargarjuegos(juego.getNickUser());
         }
     }
 
@@ -192,7 +209,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
             navFriends.setImage(imagenav2);
             navAddFriends.setImage(imagenavA2);
             labelModoO.setText("Activado");
-            
+
         } else {
 
             AnchorPane.getStylesheets().clear();
@@ -222,6 +239,8 @@ public class Controller_View_GAME_VERSE implements Initializable {
         } else if (e.getSource().equals(btn_addF)) {
             btn_addF.getStyleClass().add("btnAfter");
             btn_Friends.getStyleClass().removeAll("btnAfter");
+        } else if (e.getSource().equals(btn_Shop)) {
+            cargarjuegos(labelNick.getText());
         } else if (e.getSource().equals(btn_CerrarS)) {
             webView.getEngine().load(null);
             try {
@@ -344,43 +363,105 @@ public class Controller_View_GAME_VERSE implements Initializable {
         }
     }
 
-    private void crearJuegos(Nodo_Juego juego) {
+    public void cargarjuegos(String NickUser) {
+
+        if (!flowpaneGames.getChildren().isEmpty()) {
+            flowpaneGames.getChildren().clear();
+        }
+
+        Stack<Nodo_Juego> pilaJT = pila.getJuegosNick(NickUser);
+
+        for (Nodo_Juego juego : pilaJT) {
+
+            crearJuegos(juego.getNombre(), juego.getPrecio(), juego.getURL_ima());
+        }
+    }
+
+    private void crearJuegos(String getNombre, Float getPrecio, String getURL_ima) {
 
         Pane pane = new Pane();
+        pane.getStyleClass().add("juegos");
         pane.prefWidth(180);
         pane.prefHeight(300);
         pane.setFocusTraversable(false);
-        pane.setId(juego.getNombre());
+        pane.setId(getNombre);
 
-        Image image = new Image(getClass().getResourceAsStream(juego.getURL_ima()));
+        Image image = new Image(getClass().getResourceAsStream(getURL_ima));
         ImageView imageV = new ImageView(image);
-        imageV.prefWidth(140);
-        imageV.prefHeight(180);
-        imageV.setLayoutX(20);
+        imageV.preserveRatioProperty().set(true);
+        imageV.setFitWidth(140);
+        imageV.setFitHeight(180);
+        imageV.setLayoutX(10);
         imageV.setLayoutY(10);
 
         Pane pane2 = new Pane();
         pane2.prefWidth(140);
         pane2.prefHeight(100);
         pane2.setFocusTraversable(false);
-        pane2.setLayoutX(20);
+        pane2.setLayoutX(10);
         pane2.setLayoutY(200);
 
-        Text text1 = new Text("Juego Base");
+        Label text1 = new Label("Juego Base");
         text1.setLayoutX(0);
         text1.setLayoutY(11);
-        Text text2 = new Text(juego.getNombre());
+        text1.setStyle("-fx-font-family: 'System'; -fx-font-weight: bold; -fx-font-size: 8.0;");
+        Label text2 = new Label(getNombre);
         text2.setLayoutX(0);
         text2.setLayoutY(35);
-        Text text3 = new Text("Precio:");
+        Label text3 = new Label("Precio:");
         text3.setLayoutX(0);
         text3.setLayoutY(80);
-        Text text4 = new Text("$ " + juego.getPrecio());
+        Label text4 = new Label("COP $ " + getPrecio);
         text4.setLayoutX(70);
-        text4.setLayoutX(80);
+        text4.setLayoutY(80);
 
         pane2.getChildren().addAll(text1, text2, text3, text4);
         pane.getChildren().addAll(imageV, pane2);
-        flowpaneGames.getChildren().addAll(pane);
+        flowpaneGames.getChildren().add(pane);
+
+        System.out.println("Devió guardarse:" + getNombre);
+    }
+
+    @FXML
+    private void btn_VCompra_Action(ActionEvent event) {
+
+        if (event.getSource().equals(btn_Tarjeta)) {
+
+            if (!datos_tarjeta.isVisible()) {
+                datos_tarjeta.setVisible(true);
+                datos_nequi.setVisible(false);
+                datos_daviPlata.setVisible(false);
+                btn_Nequi.setLayoutY(390);
+                btn_Daviplata.setLayoutY(450);
+            } else {
+                datos_tarjeta.setVisible(false);
+                btn_Nequi.setLayoutY(210);
+                btn_Daviplata.setLayoutY(270);
+            }
+        } else if (event.getSource().equals(btn_Nequi)) {
+
+            if (!datos_nequi.isVisible()) {
+                datos_nequi.setVisible(true);
+                datos_tarjeta.setVisible(false);
+                datos_daviPlata.setVisible(false);
+                btn_Nequi.setLayoutY(210);
+                btn_Daviplata.setLayoutY(445);
+            } else {
+                datos_nequi.setVisible(false);
+                btn_Daviplata.setLayoutY(270);
+            }
+        } else if (event.getSource().equals(btn_Daviplata)) {
+
+            if (!datos_daviPlata.isVisible()) {
+                datos_daviPlata.setVisible(true);
+                datos_nequi.setVisible(false);
+                datos_tarjeta.setVisible(false);
+                btn_Daviplata.setLayoutY(270);
+            } else {
+                datos_daviPlata.setVisible(false);
+            }
+        } else if (event.getSource().equals(cerrar_VPago)) {
+            panelDePago.setVisible(!panelDePago.isVisible());
+        }
     }
 }

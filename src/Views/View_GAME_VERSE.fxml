@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,7 +19,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="2200.0" prefWidth="1300.0" stylesheets="@../Style/Styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller_View_GAME_VERSE">
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="2300.0" prefWidth="1300.0" stylesheets="@../Style/Styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller_View_GAME_VERSE">
    <children>
       <AnchorPane layoutX="260.0" prefHeight="130.0" prefWidth="1040.0" styleClass="bacgroundNavBar" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -140,7 +141,7 @@
          <content>
             <AnchorPane fx:id="anchorP" prefHeight="400.0" prefWidth="1030.0" styleClass="bacgroundBoddy">
                <children>
-                  <AnchorPane layoutX="73.0" layoutY="28.0" prefHeight="442.0" prefWidth="664.0" style="-fx-border-radius: 8px;" AnchorPane.bottomAnchor="1276.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="30.0">
+                  <AnchorPane layoutX="73.0" layoutY="28.0" prefHeight="442.0" prefWidth="664.0" style="-fx-border-radius: 8px;" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="30.0">
                      <children>
                         <VBox fx:id="panePresent" alignment="TOP_CENTER" prefHeight="440.0" prefWidth="666.0" style="-fx-border-color: #000000; -fx-border-radius: 8px;">
                            <children>
@@ -150,9 +151,9 @@
                         <Pane prefHeight="72.0" prefWidth="667.0" styleClass="bacgroundBoddy" />
                      </children>
                   </AnchorPane>
-                  <FlowPane fx:id="flowpaneGames" alignment="CENTER" columnHalignment="CENTER" hgap="10.0" layoutX="67.0" layoutY="516.0" prefHeight="300.0" prefWidth="900.0" prefWrapLength="900.0" styleClass="bacgroundBoddy" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="516.0">
+                  <FlowPane fx:id="flowpaneGames" hgap="10.0" layoutX="67.0" layoutY="576.0" prefHeight="300.0" prefWidth="900.0" styleClass="bacgroundBoddy" vgap="10.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="516.0">
                      <children>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -161,262 +162,169 @@
                               </ImageView>
                               <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
+                           <FlowPane.margin>
+                              <Insets />
+                           </FlowPane.margin>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_FC24.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="22.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Hogwarts.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_GTA.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="199.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_God_Of_War.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Ghost_Runner.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Fornite.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Multi_Versus.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -425,196 +333,124 @@
                               </ImageView>
                               <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Valorant.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Fall_Guys.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Hunter.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Genshin.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="21.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_F1_24.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="197.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0">
+                        <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -623,31 +459,22 @@
                               </ImageView>
                               <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Text layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juego Base">
+                                    <Label layoutX="57.0" layoutY="65.0" text="\$00000,00" />
+                                    <Label layoutY="65.0" text="Precio:" />
+                                    <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
-                                    </Text>
-                                    <Text layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$000.000">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Nombre" />
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </FlowPane>
                   <Pane layoutX="754.0" layoutY="30.0" prefHeight="441.0" prefWidth="215.0" styleClass="bacgroundBoddy" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="30.0">
                      <children>
@@ -869,7 +696,7 @@
             </Button>
             <Button id="btnPerfil" fx:id="btn_ModO" layoutX="17.0" layoutY="118.0" mnemonicParsing="false" onAction="#ActionEvent" style="-fx-background-color: none;">
                <graphic>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Modo obscuro">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Modo obscuro:">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>
@@ -885,6 +712,11 @@
                   </Text>
                </graphic>
             </Button>
+            <Label fx:id="labelModoO" layoutX="169.0" layoutY="122.0" text="Desactivado" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
          </children></Pane>
       <Pane id="panelP" fx:id="panelAmigos" layoutX="877.0" layoutY="103.0" prefHeight="340.0" prefWidth="300.0" visible="false" AnchorPane.rightAnchor="120.0">
          <children>
@@ -892,9 +724,9 @@
                <children>
                   <Button fx:id="btn_Friends" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#ActionEvent" prefHeight="22.5" prefWidth="40.0">
                      <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="navFriends" fitHeight="21.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Images/Icono_amigos1.png" />
+                              <Image url="@../Images/Icono_amigos2.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -905,9 +737,9 @@
                   </Button>
                   <Button fx:id="btn_addF" layoutX="68.0" layoutY="5.0" mnemonicParsing="false" onAction="#ActionEvent" prefHeight="22.5" prefWidth="40.0" styleClass="btnNavF">
                      <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="navAddFriends" fitHeight="21.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Images/Icono_add_Amigo2.png" />
+                              <Image url="@../Images/Icono_add_Amigo1.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -916,5 +748,175 @@
             </Pane>
          </children>
       </Pane>
+      <AnchorPane fx:id="panelDePago" prefHeight="700.0" prefWidth="1300.0" styleClass="bacgroundNavBar" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="1025.0" layoutY="-1.0" prefHeight="700.0" prefWidth="330.0" style="-fx-background-color: #AFCDD3;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Pane prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Label layoutX="11.0" layoutY="11.0" text="RESUMEN DE COMPRA">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="cerrar_VPago" layoutX="291.0" mnemonicParsing="false" onAction="#btn_VCompra_Action" style="-fx-background-color: #FFFFFF;" text="X">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="15.0" layoutY="99.0" prefHeight="258.0" prefWidth="266.0" style="-fx-background-color: #AFCDD3;" vbarPolicy="NEVER">
+                     <content>
+                        <FlowPane prefHeight="262.0" prefWidth="265.0" style="-fx-background-color: #AFCDD3;" />
+                     </content>
+                  </ScrollPane>
+                  <Separator focusTraversable="false" layoutX="15.0" layoutY="405.0" prefHeight="0.0" prefWidth="291.0" style="-fx-background-color: #000000;" />
+                  <Separator focusTraversable="false" layoutX="15.0" layoutY="465.0" prefHeight="0.0" prefWidth="291.0" style="-fx-background-color: #000000;" />
+                  <Label layoutX="15.0" layoutY="440.0" text="Precio:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="165.0" layoutY="440.0" text="COP">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="208.0" layoutY="440.0" text="000000.00">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="510.0" text="Total:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="165.0" layoutY="510.0" text="COP">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="209.0" layoutY="510.0" text="000000.00">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="473.0" text="Descuento:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="165.0" layoutY="473.0" text="COP">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="209.0" layoutY="473.0" text="000000.00">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_Pagar" layoutX="41.0" layoutY="565.0" mnemonicParsing="false" onAction="#btn_VCompra_Action" prefHeight="60.0" prefWidth="240.0" styleClass="btn_login" text="REALIZAR COMPRA" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="47.0" layoutY="45.0" prefHeight="613.0" prefWidth="790.0" style="-fx-background-color: #AFCDD3;">
+               <children>
+                  <ImageView fitHeight="432.0" fitWidth="705.0" layoutX="60.0" layoutY="146.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/Logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="10.0" layoutY="10.0" text="PANTALLA DE COMPRA">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="91.0" text="METODOS DE PAGO">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="datos_tarjeta" layoutX="13.0" layoutY="146.0" prefHeight="230.0" prefWidth="430.0" style="-fx-border-color: #000000; -fx-border-radius: 5px;" visible="false">
+                     <children>
+                        <Label layoutX="73.0" layoutY="60.0" text="Datos de la tarjeta">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="73.0" layoutY="103.0" prefHeight="27.0" prefWidth="300.0" promptText="Numero de la tarjeta" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="Numero de la tarjeta" />
+                        <TextField layoutX="73.0" layoutY="143.0" prefHeight="27.0" prefWidth="145.0" promptText="Vencimiento" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="Vencimiento" />
+                        <TextField layoutX="228.0" layoutY="143.0" prefHeight="27.0" prefWidth="145.0" promptText="CCV" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="CCV" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="datos_nequi" layoutX="13.0" layoutY="206.0" prefHeight="230.0" prefWidth="430.0" style="-fx-border-color: #000000; -fx-border-radius: 5px;" visible="false">
+                     <children>
+                        <Label layoutX="73.0" layoutY="60.0" text="Datos de la cuenta">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="73.0" layoutY="103.0" prefHeight="27.0" prefWidth="300.0" promptText="Titular de la cuenta" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="Titular de la cuenta" />
+                        <TextField layoutX="73.0" layoutY="143.0" prefHeight="27.0" prefWidth="145.0" promptText="Numero de la cuenta" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="Numero de la cuenta" />
+                        <TextField layoutX="228.0" layoutY="143.0" prefHeight="27.0" prefWidth="145.0" promptText="Clave dinamica" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="Clave dinamica" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="datos_daviPlata" layoutX="13.0" layoutY="267.0" prefHeight="230.0" prefWidth="430.0" style="-fx-border-color: #000000; -fx-border-radius: 5px;" visible="false">
+                     <children>
+                        <Label layoutX="73.0" layoutY="60.0" text="Datos de la cuenta">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="73.0" layoutY="103.0" prefHeight="27.0" prefWidth="300.0" promptText="Titular de la cuenta" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="Titular de la cuenta" />
+                        <TextField layoutX="73.0" layoutY="143.0" prefHeight="27.0" prefWidth="145.0" promptText="Numero de la cuenta" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="Numero de la cuenta" />
+                        <TextField layoutX="228.0" layoutY="143.0" prefHeight="27.0" prefWidth="145.0" promptText="Clave dinamica" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 4;" text="Codigo de pago" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="btn_Tarjeta" layoutX="15.0" layoutY="150.0" mnemonicParsing="false" onAction="#btn_VCompra_Action" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #AFCDD3;" text="Tarjeta de credito">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="54.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Images/Icono_Tarjeta.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_Nequi" layoutX="15.0" layoutY="210.0" mnemonicParsing="false" onAction="#btn_VCompra_Action" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #AFCDD3;" text="Nequi                   ">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="47.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Images/Icono_Nequi.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_Daviplata" layoutX="15.0" layoutY="270.0" mnemonicParsing="false" onAction="#btn_VCompra_Action" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #AFCDD3;" text="DaviPlata              ">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="46.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Images/Icono_DaviPlata.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

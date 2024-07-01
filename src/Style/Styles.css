@@ -136,4 +136,29 @@
 .btn_Relacionado:hover{
     -fx-background-color: #CACACA;
 }
+
+.juegos{
+    
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+}
+.juegos .label{
+
+    -fx-layout-x: 1.0;
+    -fx-layout-y: 21.0;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 14.0;
+    -fx-background-fills: #000000;
+}
+
+.juegos #base {
+
+    -fx-layout-x: 1.0;
+    -fx-layout-y: 21.0;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 10.0;
+    -fx-background-fills: #000000;
+}
 /*Stiles View_GAME_VERSE*/

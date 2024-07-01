@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Stack;
 import javax.swing.JOptionPane;
 
@@ -46,6 +47,16 @@ public class PilaStack_Juego {
         }
     }
 
+    public Stack<Nodo_Juego> getJuegosNick(String NickUser) {
+        Stack<Nodo_Juego> pila = new Stack<>();
+        for (Nodo_Juego aux : pilaJT) {
+            if (aux.getNickUser().equals(NickUser)) {
+                pila.push(aux);
+            }
+        }
+        return pila;
+    }
+    
     public Nodo_Juego getJuegoNick(String NickUser) {
         for (Nodo_Juego aux : pilaJT) {
             if (aux.getNickUser().equals(NickUser)) {
