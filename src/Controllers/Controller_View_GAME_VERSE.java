@@ -150,40 +150,6 @@ public class Controller_View_GAME_VERSE implements Initializable {
     @FXML
     private FlowPane flowAmigos;
     @FXML
-    private Pane pruebaAmigo;
-    @FXML
-    private Label txt_btn_P1;
-    @FXML
-    private Pane Red;
-    @FXML
-    private Pane FC;
-    @FXML
-    private Pane Hogwarts;
-    @FXML
-    private Pane Grand;
-    @FXML
-    private Pane God;
-    @FXML
-    private Pane GhostRunner;
-    @FXML
-    private Pane Fornite;
-    @FXML
-    private Pane MultiVersus;
-    @FXML
-    private Pane FallOut;
-    @FXML
-    private Pane Valorant;
-    @FXML
-    private Pane Fall;
-    @FXML
-    private Pane TheHunter;
-    @FXML
-    private Pane Genshin;
-    @FXML
-    private Pane F1;
-    @FXML
-    private Pane Spider;
-    @FXML
     private TextField txtFiltroAmigo;
 
     /**

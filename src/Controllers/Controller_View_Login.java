@@ -109,8 +109,8 @@ public class Controller_View_Login implements Initializable {
 
                     Controller_View_GAME_VERSE controller = loader.getController();
                     controller.labelNick.setText(buscar.getNombreJugador());
-                    
-                    String PL = buscar.getNombreJugador();                     
+
+                    String PL = buscar.getNombreJugador();
                     controller.getTxt_btn_P().setText(PL.substring(0, 1));
                     controller.mostrarJuegos();
                     
@@ -144,7 +144,7 @@ public class Controller_View_Login implements Initializable {
 
                     Controller_View_GAME_VERSE controller = loader.getController();
                     controller.labelNick.setText(buscar2.getNombreJugador());
-                    
+
                     String PL = buscar2.getNombreJugador();
                     controller.getTxt_btn_P().setText(PL.substring(0, 1));
 
