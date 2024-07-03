@@ -112,8 +112,8 @@ public class Controller_View_Login implements Initializable {
                     
                     String PL = buscar.getNombreJugador();                     
                     controller.getTxt_btn_P().setText(PL.substring(0, 1));
-                    controller.cargarjuegos(controller.getTxt_btn_P().getText());
-
+                    controller.mostrarJuegos();
+                    
                     Scene scene = new Scene(root);
                     Stage stage = new Stage();
 
