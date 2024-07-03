@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -81,6 +83,24 @@ public class ListaDobleUsuario {
         }
     }
 
+    public ObservableList<Nodo_Usuario> getUsuarios() {
+        ObservableList<Nodo_Usuario> todos = FXCollections.observableArrayList();
+        if (cabU == null) {
+            System.err.println("Error: cabU es null.");
+            return todos;
+        }
+
+        Nodo_Usuario actual = cabU;
+
+        do {
+            todos.add(actual);
+            actual = actual.getSig();
+
+        } while (actual != null && actual != cabU);
+        
+        return todos;
+    }
+
     public Nodo_Usuario getUltimo() {
 
         if (cabU == null) {
@@ -109,7 +129,7 @@ public class ListaDobleUsuario {
                         "Ya existe un usuario con este NickName");
                 return null;
             } else {
-                Nodo_Usuario nuevoU = new Nodo_Usuario(txtNombre.getText(), txtIdentificacion.getText(), txtCell.getText(), txtGmail.getText(), txtNickName.getText(), txtPassword.getText());
+                Nodo_Usuario nuevoU = new Nodo_Usuario(txtNombre.getText(), txtIdentificacion.getText(), txtCell.getText(), txtGmail.getText(), txtNickName.getText(), txtPassword.getText(), "");
                 Alert(Alert.AlertType.CONFIRMATION, "Dialogo de confirmación",
                         "Registro realizado con exito...!\n"
                         + "Felicidades...! ya haces parte de nuestros usuarios :)");
@@ -117,7 +137,7 @@ public class ListaDobleUsuario {
                 txtIdentificacion.setText("");
                 txtCell.setText("");
                 txtNickName.setText("");
-                txtGmail.setText("");                
+                txtGmail.setText("");
                 txtPassword.setText("");
                 return nuevoU;
             }
@@ -128,9 +148,9 @@ public class ListaDobleUsuario {
 
     }
 
-    public void addUsuario(String nom, String iden, String celu, String gmail, String nick, String clave) {
+    public void addUsuario(String nom, String iden, String celu, String gmail, String nick, String clave, String amigos) {
 
-        Nodo_Usuario ch = new Nodo_Usuario(nom, iden, celu, gmail, nick, clave);
+        Nodo_Usuario ch = new Nodo_Usuario(nom, iden, celu, gmail, nick, clave, amigos);
         if (ch != null) {
             if (cabU == null) {
                 cabU = ch;
@@ -178,6 +198,7 @@ public class ListaDobleUsuario {
                 writer.write(nodoActual.getCorreo() + ", ");
                 writer.write(nodoActual.getNombreJugador() + ", ");
                 writer.write(nodoActual.getClave());
+                writer.write(nodoActual.getAmigos());
                 writer.newLine();
 
                 nodoActual = nodoActual.getSig();
@@ -211,8 +232,9 @@ public class ListaDobleUsuario {
                 String gmail = atributos[3];
                 String nick = atributos[4];
                 String clave = atributos[5];
+                String amigos = atributos[6];
 
-                addUsuario(nombre, identificacion, celular, gmail, nick, clave);
+                addUsuario(nombre, identificacion, celular, gmail, nick, clave, amigos);
             }
 
             System.out.println("Datos cargados correctamente desde archivo de usuasio.");

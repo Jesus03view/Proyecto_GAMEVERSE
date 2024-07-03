@@ -8,24 +8,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.Stack;
 import javax.swing.JOptionPane;
 
 public class PilaStack_Juego {
     
-    private final Stack<Nodo_Juego> pilaJT;
     private final Stack<Nodo_Juego> pilaJB;
     private final Stack<Nodo_Juego> pilaJL;
 
     public PilaStack_Juego() {
-        pilaJT = new Stack<>();
         pilaJB = new Stack<>();
         pilaJL = new Stack<>();
-    }
-
-    public Stack<Nodo_Juego> getPilaJT() {
-        return pilaJT;
     }
 
     public Stack<Nodo_Juego> getPilaJB() {
@@ -36,11 +29,11 @@ public class PilaStack_Juego {
         return pilaJL;
     }
     
-    //Metodos PilaJT
+    //Metodos PilaJB
     public void setPushJuego(Nodo_Juego j) {
-        int pos = pilaJT.indexOf(j);
+        int pos = pilaJB.indexOf(j);
         if (pos == -1) {
-            pilaJT.push(j);
+            pilaJB.push(j);
             System.out.println("Se registró el juego");
         } else {
             System.out.println("Ya se encontraba registrado el producto");
@@ -49,7 +42,7 @@ public class PilaStack_Juego {
 
     public Stack<Nodo_Juego> getJuegosNick(String NickUser) {
         Stack<Nodo_Juego> pila = new Stack<>();
-        for (Nodo_Juego aux : pilaJT) {
+        for (Nodo_Juego aux : pilaJB) {
             if (aux.getNickUser().equals(NickUser)) {
                 pila.push(aux);
             }
@@ -58,7 +51,7 @@ public class PilaStack_Juego {
     }
     
     public Nodo_Juego getJuegoNick(String NickUser) {
-        for (Nodo_Juego aux : pilaJT) {
+        for (Nodo_Juego aux : pilaJB) {
             if (aux.getNickUser().equals(NickUser)) {
                 return aux;
             }
@@ -68,9 +61,9 @@ public class PilaStack_Juego {
 
     public void setPopJuegoNick(String nick) {
         Nodo_Juego aux = null;
-        if (!pilaJT.empty()) {
+        if (!pilaJB.empty()) {
             aux = getJuegoNick(nick);
-            if ((aux != null) && (pilaJT.remove(aux))) {
+            if ((aux != null) && (pilaJB.remove(aux))) {
                 JOptionPane.showMessageDialog(null, "Juego eliminado!");
             } else {
                 JOptionPane.showMessageDialog(null, "El juego no existe!");
@@ -84,12 +77,12 @@ public class PilaStack_Juego {
         PilaStack_Juego caux = new PilaStack_Juego();
         int i;
         Nodo_Juego aux = null;
-        if (this.pilaJT == null) {
+        if (this.pilaJB == null) {
             return null;
         } else {
-            for (i = 0; i < pilaJT.size(); i++) {
-                aux = pilaJT.get(i);
-                caux.pilaJT.add(i, aux);
+            for (i = 0; i < pilaJB.size(); i++) {
+                aux = pilaJB.get(i);
+                caux.pilaJB.add(i, aux);
             }
             return caux;
         }
@@ -109,12 +102,11 @@ public class PilaStack_Juego {
         }
     }
 
-    //Metodos pilaJB
     //Metodos pilaJL
  
     public void guardarJuegos(Stack<Nodo_Juego> pila) {
 
-        String direccion = System.getProperty("user.dir") + "\\src\\ArchivosBase_TXT\\Archivo_Compras.txt";
+        String direccion = System.getProperty("user.dir") + "\\src\\ArchivosBase_TXT\\Archivo_Juegos_Biblioteca.txt";
 
         Path archivo = Paths.get(direccion);
 
@@ -124,28 +116,27 @@ public class PilaStack_Juego {
             for (Nodo_Juego juego : proAux) {
                 writer.write(juego.getNickUser() + ", ");
                 writer.write(juego.getNombre() + ", ");
-                writer.write(juego.getPrecio() + ", ");
                 writer.write(juego.getURL_ima());
                 writer.newLine();
             }
 
-            System.out.println("Datos guardados correctamente en: Archivo_Juegos_Tienda.txt.");
+            System.out.println("Datos guardados correctamente en: Archivo_Juegos_Biblioteca.txt.");
         } catch (IOException e) {
-            System.out.println("Error al guardar los datos en: Archivo_Juegos_Tienda.txt: " + e.getMessage());
+            System.out.println("Error al guardar los datos en: Archivo_Juegos_Biblioteca.txt: " + e.getMessage());
         }
     }
 
     public void cargarJuegos() {
 
-        String direccion = System.getProperty("user.dir") + "\\src\\Archivos_Base_TXT\\Archivo_Juegos_Tienda.txt";
+        String direccion = System.getProperty("user.dir") + "\\src\\Archivos_Base_TXT\\Archivo_Juegos_Biblioteca.txt";
 
         Path archivo = Paths.get(direccion);
 
         try (BufferedReader reader = new BufferedReader(new FileReader(archivo.toFile()))) {
 
             String linea;
-            if (!pilaJT.isEmpty()) {
-                pilaJT.clear();
+            if (!pilaJB.isEmpty()) {
+                pilaJB.clear();
             }
             while ((linea = reader.readLine()) != null) {
 
@@ -153,18 +144,17 @@ public class PilaStack_Juego {
 
                 String NickUser = atributos[0];
                 String nombre = atributos[1];
-                Float precio = Float.valueOf(atributos[2]);
-                String URL = atributos[3];
+                String URL = atributos[2];
                 
 
-                Nodo_Juego juego = new Nodo_Juego(NickUser, nombre, precio, URL);
+                Nodo_Juego juego = new Nodo_Juego(NickUser, nombre, URL);
 
                 setPushJuego(juego);
             }
 
-            System.out.println("Datos cargados correctamente desde Archivo_Juegos_Tienda.txt.");
+            System.out.println("Datos cargados correctamente desde Archivo_Juegos_Biblioteca.txt.");
         } catch (IOException e) {
-            System.out.println("Error al cargar los datos desde Archivo_Juegos_Tienda.txt: " + e.getMessage());
+            System.out.println("Error al cargar los datos desde Archivo_Juegos_Biblioteca.txt: " + e.getMessage());
         }
     }
 
