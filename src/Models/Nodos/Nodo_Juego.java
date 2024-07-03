@@ -16,10 +16,9 @@ public class Nodo_Juego {
         this.URL_ima = URL_ima;
     }
     
-    public Nodo_Juego(String nickUser, String nombre, float precio, String URL_ima) {
+    public Nodo_Juego(String nickUser, String nombre, String URL_ima) {
         this.nickUser = nickUser;
         this.nombre = nombre;
-        this.precio = precio;
         this.URL_ima = URL_ima;
     }
 
