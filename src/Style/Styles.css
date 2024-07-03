@@ -138,7 +138,7 @@
 }
 
 .juegos{
-    
+
     -fx-border-color: #000000;
     -fx-border-radius: 5px;
 }
@@ -160,5 +160,11 @@
     -fx-font-weight: bold;
     -fx-font-size: 10.0;
     -fx-background-fills: #000000;
+}
+
+#gratis{
+    
+    -fx-background-color:  #30B0F9;
+    -fx-background-radius:  4px;
 }
 /*Stiles View_GAME_VERSE*/
