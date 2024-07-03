@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
@@ -34,7 +37,8 @@ public class Controller_View_GAME_VERSE implements Initializable {
 
     private ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
     private PilaStack_Juego pila = ModeloDeDatos.obtenerInstancia().getPilaJ();
-
+    private ObservableList<Pane> amigos;
+    
     @FXML
     private Button btn_carrito;
     @FXML
@@ -134,6 +138,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
     @FXML
     private AnchorPane panelDePago;
 
+
     /**
      * Initializes the controller class.
      *
@@ -143,6 +148,8 @@ public class Controller_View_GAME_VERSE implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO      
+        amigos = FXCollections.observableArrayList();
+        
         anchorP.prefWidthProperty().bind(scrollPane.widthProperty());
         anchorP.prefHeightProperty().bind(scrollPane.heightProperty());
         flowpaneGames.prefWidthProperty().bind(anchorP.widthProperty());
@@ -151,11 +158,6 @@ public class Controller_View_GAME_VERSE implements Initializable {
         listU.cargarDatosDesdeArchivoUsuarios();
 
         pila.cargarJuegos();
-        Nodo_Juego juego = pila.getJuegoNick(labelNick.getText());
-
-        if (juego != null) {
-            cargarjuegos(juego.getNickUser());
-        }
     }
 
     public Label getTxt_btn_P() {
@@ -185,6 +187,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
         }
     }
 
+    
     private void toggleStylesheets() {
         Image image = new Image(getClass().getResourceAsStream("/Images/Logo.png"));
         Image image2 = new Image(getClass().getResourceAsStream("/Images/Logo2.png"));
@@ -240,7 +243,9 @@ public class Controller_View_GAME_VERSE implements Initializable {
             btn_addF.getStyleClass().add("btnAfter");
             btn_Friends.getStyleClass().removeAll("btnAfter");
         } else if (e.getSource().equals(btn_Shop)) {
-            cargarjuegos(labelNick.getText());
+
+            mostrarJuegos();
+
         } else if (e.getSource().equals(btn_CerrarS)) {
             webView.getEngine().load(null);
             try {
@@ -363,18 +368,23 @@ public class Controller_View_GAME_VERSE implements Initializable {
         }
     }
 
-    public void cargarjuegos(String NickUser) {
+    public void mostrarJuegos() {
+        Nodo_Juego juego1 = pila.getJuegoNick(labelNick.getText());
 
         if (!flowpaneGames.getChildren().isEmpty()) {
-            flowpaneGames.getChildren().clear();
+            Stack<Nodo_Juego> pilaJT = pila.getJuegosNick(juego1.getNickUser());
+
+            for (Nodo_Juego juego : pilaJT) {
+                for (int a = 0; a < flowpaneGames.getChildren().size(); a++) {
+                    Pane newPane = (Pane) flowpaneGames.getChildren().get(a);
+                    String[] nombre = juego.getNombre().split(" ");
+                    if (newPane.getId().equals(nombre[0])) {
+                        flowpaneGames.getChildren().remove(a);
+                    }
+                }
+            }
         }
 
-        Stack<Nodo_Juego> pilaJT = pila.getJuegosNick(NickUser);
-
-        for (Nodo_Juego juego : pilaJT) {
-
-            crearJuegos(juego.getNombre(), juego.getPrecio(), juego.getURL_ima());
-        }
     }
 
     private void crearJuegos(String getNombre, Float getPrecio, String getURL_ima) {
@@ -463,5 +473,9 @@ public class Controller_View_GAME_VERSE implements Initializable {
         } else if (event.getSource().equals(cerrar_VPago)) {
             panelDePago.setVisible(!panelDePago.isVisible());
         }
+    }
+
+    @FXML
+    private void filtrarAmigos(KeyEvent event) {
     }
 }
