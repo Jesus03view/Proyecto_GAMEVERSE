@@ -4,6 +4,7 @@ import Models.EstructurasDeDatos.ListaDobleUsuario;
 import Models.EstructurasDeDatos.PilaStack_Juego;
 import Models.ModeloDeDatos;
 import Models.Nodos.Nodo_Juego;
+import Models.Nodos.Nodo_Usuario;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -28,17 +30,23 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class Controller_View_GAME_VERSE implements Initializable {
 
-    private ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
-    private PilaStack_Juego pila = ModeloDeDatos.obtenerInstancia().getPilaJ();
+    private final ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
+    private final PilaStack_Juego pila = ModeloDeDatos.obtenerInstancia().getPilaJ();
     private ObservableList<Pane> amigos;
-    
+    private ObservableList<Pane> filtroAmigos;
+
     @FXML
     private Button btn_carrito;
     @FXML
@@ -137,7 +145,46 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private Button btn_Pagar;
     @FXML
     private AnchorPane panelDePago;
-
+    @FXML
+    private FlowPane flowRelacionado;
+    @FXML
+    private FlowPane flowAmigos;
+    @FXML
+    private Pane pruebaAmigo;
+    @FXML
+    private Label txt_btn_P1;
+    @FXML
+    private Pane Red;
+    @FXML
+    private Pane FC;
+    @FXML
+    private Pane Hogwarts;
+    @FXML
+    private Pane Grand;
+    @FXML
+    private Pane God;
+    @FXML
+    private Pane GhostRunner;
+    @FXML
+    private Pane Fornite;
+    @FXML
+    private Pane MultiVersus;
+    @FXML
+    private Pane FallOut;
+    @FXML
+    private Pane Valorant;
+    @FXML
+    private Pane Fall;
+    @FXML
+    private Pane TheHunter;
+    @FXML
+    private Pane Genshin;
+    @FXML
+    private Pane F1;
+    @FXML
+    private Pane Spider;
+    @FXML
+    private TextField txtFiltroAmigo;
 
     /**
      * Initializes the controller class.
@@ -149,7 +196,8 @@ public class Controller_View_GAME_VERSE implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO      
         amigos = FXCollections.observableArrayList();
-        
+        filtroAmigos = FXCollections.observableArrayList();
+
         anchorP.prefWidthProperty().bind(scrollPane.widthProperty());
         anchorP.prefHeightProperty().bind(scrollPane.heightProperty());
         flowpaneGames.prefWidthProperty().bind(anchorP.widthProperty());
@@ -187,7 +235,80 @@ public class Controller_View_GAME_VERSE implements Initializable {
         }
     }
 
-    
+    public void cargarAmigos() {
+        if (listU == null) {
+            System.err.println("Error: listU es null.");
+            return;
+        }
+        ObservableList<Nodo_Usuario> aux = listU.getUsuarios();
+
+        for (Nodo_Usuario amigo : aux) {
+            if (!amigo.getAmigos().isEmpty()) {
+
+                crearAmigos(amigo);
+
+            }
+
+        }
+    }
+
+    private void crearAmigos(Nodo_Usuario user) {
+        String[] nAmigos = user.getAmigos().split("\\. ");
+
+        Nodo_Usuario buscar = listU.BuscarNick(labelNick.getText());
+
+        if (buscar.equals(user)) {
+            amigos.clear();
+            for (String nAmigo : nAmigos) {
+                if (!nAmigo.isEmpty()) {
+                    Pane pane = new Pane();
+                    pane.getStyleClass().add("paneAmigos");
+                    pane.setPrefWidth(200);
+                    pane.setPrefHeight(40);
+
+                    Pane pane2 = new Pane();
+                    pane2.setPrefWidth(160);
+                    pane2.setPrefHeight(30);
+                    pane2.setLayoutX(36);
+                    pane2.setLayoutY(5);
+                    pane2.setId("pane");
+
+                    Label label = new Label(nAmigo);
+                    label.setLayoutX(21);
+                    label.setLayoutY(6);
+                    label.setId("labelNick");
+                    label.setFont(Font.font("System", FontWeight.BOLD, 14));
+
+                    Label label1 = new Label(label.getText().substring(0, 1));
+                    label1.setPrefWidth(20);
+                    label1.setLayoutX(0);
+                    label1.setLayoutY(0);
+                    label1.setId("label2");
+                    label1.setTextFill(Color.WHITE);
+                    label1.setFont(Font.font("System", FontWeight.BOLD, 25));
+
+                    Button button = new Button("", label1);
+                    button.setPrefWidth(44);
+                    button.setPrefHeight(44);
+                    button.setLayoutX(0);
+                    button.setLayoutY(0);
+                    button.setId("button");
+                    button.setStyle("-fx-background-color: #000000;");
+
+                    Circle circle = new Circle(6);
+                    circle.setFill(Color.FORESTGREEN);
+                    circle.setLayoutX(38);
+                    circle.setLayoutY(35);
+                    pane2.getChildren().add(label);
+                    pane.getChildren().addAll(pane2, button, circle);
+                    amigos.add(pane);
+                }
+            }
+            flowAmigos.getChildren().clear();
+            flowAmigos.getChildren().addAll(amigos);
+        }
+    }
+
     private void toggleStylesheets() {
         Image image = new Image(getClass().getResourceAsStream("/Images/Logo.png"));
         Image image2 = new Image(getClass().getResourceAsStream("/Images/Logo2.png"));
@@ -235,6 +356,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
         } else if (e.getSource().equals(btn_Amigos)) {
             panelAmigos.setVisible(!panelAmigos.isVisible());
             panelPerfil.setVisible(false);
+            cargarAmigos();
         } else if (e.getSource().equals(btn_Friends)) {
             btn_Friends.getStyleClass().add("btnAfter");
             btn_addF.getStyleClass().removeAll("btnAfter");
@@ -477,5 +599,29 @@ public class Controller_View_GAME_VERSE implements Initializable {
 
     @FXML
     private void filtrarAmigos(KeyEvent event) {
+
+        String filtroNick = txtFiltroAmigo.getText().toLowerCase();
+
+        if (filtroNick.isEmpty()) {
+
+            cargarAmigos();
+
+        } else {
+
+            filtroAmigos.clear();
+
+            for (Pane p : amigos) {
+
+                Label labelNickN = (Label) p.lookup("#labelNick");
+
+                if (labelNickN != null && labelNickN.getText().toLowerCase().contains(filtroNick)) {
+
+                    filtroAmigos.add(p);
+                }
+            }
+
+            flowAmigos.getChildren().clear();
+            flowAmigos.getChildren().addAll(filtroAmigos);
+        }
     }
 }

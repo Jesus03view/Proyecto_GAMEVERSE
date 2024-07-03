@@ -1,22 +1,26 @@
 package Models.Nodos;
 
 public class Nodo_Usuario {
-    
+
     private String nombre;
     private String identificacion;
     private String celular;
     private String correo;
     private String nombreJugador;
     private String clave;
+    private String amigos;
     private Nodo_Usuario sig, ant;
-    
-    public Nodo_Usuario(String nombre, String identificacion, String celular, String correo, String nombreJugador, String clave) {
+
+    public Nodo_Usuario(String nombre, String identificacion, String celular, String correo, String nombreJugador, String clave, String amigos) {
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.celular = celular;
         this.correo = correo;
         this.nombreJugador = nombreJugador;
         this.clave = clave;
+        this.amigos = amigos;
+        this.sig = null;
+        this.ant = null;
     }
 
     public String getNombre() {
@@ -67,6 +71,14 @@ public class Nodo_Usuario {
         this.clave = clave;
     }
 
+    public String getAmigos() {
+        return amigos;
+    }
+
+    public void setAmigos(String amigos) {
+        this.amigos = amigos;
+    }       
+
     public Nodo_Usuario getSig() {
         return sig;
     }
@@ -82,5 +94,5 @@ public class Nodo_Usuario {
     public void setAnt(Nodo_Usuario ant) {
         this.ant = ant;
     }
-        
+
 }
