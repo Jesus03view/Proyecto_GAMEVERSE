@@ -7,6 +7,7 @@ import Models.Nodos.Nodo_Juego;
 import Models.Nodos.Nodo_Usuario;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Stack;
 import java.util.logging.Level;
@@ -151,6 +152,44 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private FlowPane flowAmigos;
     @FXML
     private TextField txtFiltroAmigo;
+    @FXML
+    private Pane Red;
+    @FXML
+    private Pane FC;
+    @FXML
+    private Pane Hogwarts;
+    @FXML
+    private Pane Grand;
+    @FXML
+    private Pane God;
+    @FXML
+    private Pane GhostRunner;
+    @FXML
+    private Pane Fornite;
+    @FXML
+    private Pane MultiVersus;
+    @FXML
+    private Pane FallOut;
+    @FXML
+    private Pane Valorant;
+    @FXML
+    private Pane Fall;
+    @FXML
+    private Pane TheHunter;
+    @FXML
+    private Pane Genshin;
+    @FXML
+    private Pane F1;
+    @FXML
+    private Pane Spider;
+    @FXML
+    private Pane PanelAddAmigos;
+    @FXML
+    private TextField txtFiltroAddAmigo;
+    @FXML
+    private FlowPane flowAddAmigos;
+    @FXML
+    private Pane PanelAmigos;
 
     /**
      * Initializes the controller class.
@@ -218,6 +257,19 @@ public class Controller_View_GAME_VERSE implements Initializable {
         }
     }
 
+    private void assignRandomColor(Button button) {
+        Random random = new Random();
+        Color randomColor = Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+        button.setStyle("-fx-background-color: " + toHexString(randomColor) + ";");
+    }
+
+    private String toHexString(Color color) {
+        int r = (int) (color.getRed() * 255);
+        int g = (int) (color.getGreen() * 255);
+        int b = (int) (color.getBlue() * 255);
+        return String.format("#%02X%02X%02X", r, g, b);
+    }
+
     private void crearAmigos(Nodo_Usuario user) {
         String[] nAmigos = user.getAmigos().split("\\. ");
 
@@ -259,7 +311,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
                     button.setLayoutX(0);
                     button.setLayoutY(0);
                     button.setId("button");
-                    button.setStyle("-fx-background-color: #000000;");
+                    assignRandomColor(button);
 
                     Circle circle = new Circle(6);
                     circle.setFill(Color.FORESTGREEN);
@@ -326,10 +378,13 @@ public class Controller_View_GAME_VERSE implements Initializable {
         } else if (e.getSource().equals(btn_Friends)) {
             btn_Friends.getStyleClass().add("btnAfter");
             btn_addF.getStyleClass().removeAll("btnAfter");
-
+            PanelAmigos.setVisible(true);
+            PanelAddAmigos.setVisible(false);
         } else if (e.getSource().equals(btn_addF)) {
             btn_addF.getStyleClass().add("btnAfter");
             btn_Friends.getStyleClass().removeAll("btnAfter");
+            PanelAmigos.setVisible(false);
+            PanelAddAmigos.setVisible(true);
         } else if (e.getSource().equals(btn_Shop)) {
 
             mostrarJuegos();

@@ -662,6 +662,29 @@
                 </AnchorPane>
             </content>
         </ScrollPane>
+      <ScrollPane fx:id="scrollPane_2" focusTraversable="false" hbarPolicy="NEVER" prefHeight="700.0" prefWidth="1040.0" styleClass="bacgroundBoddy" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
+         <content>
+            <AnchorPane fx:id="anchorP2" prefHeight="1200.0" prefWidth="1030.0" styleClass="bacgroundBoddy">
+               <children>
+                  <Pane fx:id="M_Red" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_FC" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_Hogwarts" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_Grand" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_God" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_GhostRunner" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_Fornite" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_MultiVersus" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_FallOut" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_Valorant" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_Fall" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_TheHunter" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_Genshin" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_F1" prefHeight="1200.0" prefWidth="1030.0" />
+                  <Pane fx:id="M_Spider" prefHeight="1200.0" prefWidth="1030.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
         <Pane id="panelP" fx:id="panelPerfil" layoutX="965.0" layoutY="103.0" prefHeight="300.0" prefWidth="300.0" visible="false" AnchorPane.rightAnchor="35.0">
             <children>
                 <Separator focusTraversable="false" layoutX="17.0" layoutY="41.0" prefHeight="16.0" prefWidth="266.0" />
@@ -705,8 +728,56 @@
                 </Label>
             </children>
         </Pane>
-        <Pane id="panelP" fx:id="panelAmigos" layoutX="877.0" layoutY="103.0" prefHeight="340.0" prefWidth="300.0" AnchorPane.rightAnchor="120.0">
+        <Pane id="panelP" fx:id="panelAmigos" layoutX="877.0" layoutY="103.0" prefHeight="340.0" prefWidth="300.0" visible="false" AnchorPane.rightAnchor="120.0">
             <children>
+            <Pane id="contAm" fx:id="PanelAddAmigos" layoutX="10.0" layoutY="55.0" prefHeight="279.0" prefWidth="280.0" visible="false">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="152.0" text="Buscar Jugador" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtFiltroAddAmigo" focusTraversable="false" layoutY="30.0" onKeyReleased="#filtrarAmigos" prefHeight="30.0" prefWidth="149.0" promptText="NickName" />
+                  <Label layoutY="80.0" prefHeight="21.0" prefWidth="86.0" text="Jugadores" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane id="contAm" focusTraversable="false" hbarPolicy="NEVER" hvalue="0.55" layoutY="100.0" prefHeight="170.0" prefWidth="280.0" vbarPolicy="NEVER" vvalue="0.55">
+                     <content>
+                        <FlowPane id="contAm" fx:id="flowAddAmigos" prefHeight="170.0" prefWidth="280.0" vgap="10.0">
+                           <padding>
+                              <Insets left="5.0" top="10.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+            <Pane id="contAm" fx:id="PanelAmigos" layoutX="10.0" layoutY="55.0" prefHeight="279.0" prefWidth="280.0">
+               <children>
+                      <Label prefHeight="30.0" prefWidth="58.0" text="Fitrar" textFill="WHITE">
+                          <font>
+                              <Font name="System Bold" size="20.0" />
+                          </font>
+                      </Label>
+                      <TextField fx:id="txtFiltroAmigo" focusTraversable="false" layoutY="30.0" onKeyReleased="#filtrarAmigos" prefHeight="30.0" prefWidth="149.0" promptText="NickName" />
+                      <Label layoutY="80.0" prefHeight="21.0" prefWidth="58.0" text="Amigos" textFill="WHITE">
+                          <font>
+                              <Font name="System Bold" size="15.0" />
+                          </font>
+                      </Label>
+                      <ScrollPane id="contAm" focusTraversable="false" hbarPolicy="NEVER" hvalue="0.55" layoutY="100.0" prefHeight="170.0" prefWidth="280.0" vbarPolicy="NEVER" vvalue="0.55">
+                          <content>
+                              <FlowPane id="contAm" fx:id="flowAmigos" prefHeight="170.0" prefWidth="280.0" vgap="10.0">
+                                  <padding>
+                                      <Insets left="5.0" top="10.0" />
+                                  </padding>
+                              </FlowPane>
+                          </content>
+                      </ScrollPane>
+               </children>
+            </Pane>
                 <Pane layoutX="88.0" layoutY="10.0" prefHeight="40.0" prefWidth="125.0" styleClass="navFriends">
                     <children>
                         <Button fx:id="btn_Friends" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#ActionEvent" prefHeight="22.5" prefWidth="40.0">
@@ -733,26 +804,6 @@
                         </Button>
                     </children>
                 </Pane>
-                <ScrollPane id="contAm" focusTraversable="false" hbarPolicy="NEVER" hvalue="0.55" layoutX="12.0" layoutY="160.0" prefHeight="170.0" prefWidth="280.0" vbarPolicy="NEVER" vvalue="0.55">
-                    <content>
-                        <FlowPane id="contAm" fx:id="flowAmigos" prefHeight="170.0" prefWidth="280.0" vgap="10.0">
-                            <padding>
-                                <Insets left="5.0" top="10.0" />
-                            </padding>
-                        </FlowPane>
-                    </content>
-                </ScrollPane>
-                <Label layoutX="12.0" layoutY="54.0" prefHeight="30.0" prefWidth="58.0" text="Fitrar" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="txtFiltroAmigo" focusTraversable="false" layoutX="12.0" layoutY="84.0" onKeyReleased="#filtrarAmigos" prefHeight="30.0" prefWidth="149.0" promptText="NickName" />
-                <Label layoutX="12.0" layoutY="139.0" prefHeight="21.0" prefWidth="58.0" text="Amigos" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
             </children>
         </Pane>
         <AnchorPane fx:id="panelDePago" prefHeight="700.0" prefWidth="1300.0" styleClass="bacgroundNavBar" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
