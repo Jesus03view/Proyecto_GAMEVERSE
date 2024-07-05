@@ -163,8 +163,59 @@
 }
 
 #gratis{
-    
+
     -fx-background-color:  #30B0F9;
     -fx-background-radius:  4px;
 }
+
+#perfilA{
+
+    -fx-background-radius: 50px;
+}
+
+/*Stilos del panel de los amigos*/
+
+.paneAmigos{
+
+    -fx-background-color: none;
+    -fx-background-radius: 8px;
+}
+
+.paneAmigos #pane{
+
+    -fx-background-color: none;
+    -fx-background-radius: 0 8 8 0;
+}
+
+.paneAmigos #pane:hover{
+
+    -fx-background-color: #88A9AF;
+}
+
+.paneAmigos #pane #labelNick{
+
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 14.0;
+    -fx-text-fill: #FFFFFF;
+}
+
+.paneAmigos #button{
+
+    -fx-background-radius: 50px;
+    -fx-background-color: #DF8B3C;
+}
+
+.paneAmigos #button #label2{
+
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 25.0;
+    -fx-text-fill: #FFFFFF;
+}
+
+#contAm{
+    -fx-background-color: #557f87;
+}
+/*Stilos del panel de los amigos*/
 /*Stiles View_GAME_VERSE*/
