@@ -2,9 +2,9 @@
 
 # Integrantes:
 
-<h4>Jesús Abiata Lopéz Llorente</h4>
-<h4>Juan Ángel Ramos Hernández</h4>
-<h4>Emely María Herrera Álvarez</h4>
+- <h4>Jesús Abiata Lopéz Llorente</h4>
+- <h4>Juan Ángel Ramos Hernández</h4>
+- <h4>Emely María Herrera Álvarez</h4>
 
 ## Manual de Usuario:
 
