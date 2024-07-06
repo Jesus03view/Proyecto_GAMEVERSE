@@ -27,6 +27,41 @@ Esta es la vista donde el usuario podrá ingresar despues de llenar sus datos de
 ## Manual de Desarrollador
 
 Acontinuación tenemos la explicación o la demostración de de la solucion en el codigo fuente(Contenido para desarrolladores).
+
+<table align="center">
+  <tr>
+    <h5 align="center">Tabla de Clases</t5>
+  </tr>
+  <tr>
+    <th>Clases</th>
+    <th>Descripción</th>
+  </tr>
+  <tr>
+    <td>App.java</td>
+    <td>Esta clase se encaraga de tomar el FXML de la pagina que se iniciará cuando se ejecute el programa carga la vista y lanza la aplicación</td>
+  </tr>
+  <tr>
+    <td>ModeloDeDatos</td>
+    <td>Esta clase implementa el patrón de diseño singleton y gestiona las instancias de los modelos de datos</td>
+  </tr>
+  <tr>
+    <td>ListaDobleUsuario</td>
+    <td>Esta clase implementa los metodos para almacenar y gestionar usuarios, guarda estos en archivos.txt para la persistencia de los datos</td>
+  </tr>  
+  <tr>
+    <td>PilaStack_Juego</td>
+    <td>Esta clase plementa tres pilas Stack que gestionan los diferentes archivos.txt y pilas de juegos en la aplicación</td>
+  </tr>
+  <tr>
+    <td>Nodo_Usuario</td>
+    <td>Esta clase implementa los atributos y metodos necesarios para cargar la información de usuario en la lista usuario</td>
+  </tr>
+  <tr>
+    <td>Nodo_Juego</td>
+    <td>Esta clase implementa los atributos y metodos necesarios para cargar la información de los juegos en las pilasStack</td>
+  </tr>
+</table>
+
 ## Prototipo
 
 Puedes ver el prototipo del proyecto en el siguiente enlace: [Prototipo en Figma](https://www.figma.com/design/QcOLM4VnaQjJViVNxaTUtt/Prototype_GAME_VERSE?node-id=0-1&t=8u0L6xB1ygdAVBs2-1)
