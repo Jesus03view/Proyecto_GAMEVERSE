@@ -1,5 +1,11 @@
 <h1 align="center">GAME_VERSE_FINAL_PROJECT</h1>
 
+# Integrantes:
+
+<h4>Jesús Abiata Lopéz Llorente</h4>
+<h4>Juan Ángel Ramos Hernández</h4>
+<h4>Emely María Herrera Álvarez</h4>
+
 ## Manual de Usuario:
 
 A continuación, se estará dando una breve explicación del funcionamiento del programa para los usuarios del mismo. Esto se logra apreciar de manera clara y sencilla en las siguientes presentaciones.
@@ -30,51 +36,51 @@ Acontinuación tenemos la explicación o la demostración de de la solucion en e
 
 <table align="center">
   <tr>
-    <h3 align="center">Tabla de Clases</t3>
+          <h3 align="center">Tabla de Clases</t3>
   </tr>
   <tr>
-    <th>Clases</th>
-    <th>Descripción</th>
+          <th>Clases</th>
+          <th>Descripción</th>
   </tr>
   <tr>
-    <td>App.java</td>
-    <td>Esta clase se encaraga de tomar el FXML de la pagina que se iniciará cuando se ejecute el programa carga la vista y lanza la aplicación</td>
+          <td>App.java</td>
+          <td>Esta clase se encaraga de tomar el FXML de la pagina que se iniciará cuando se ejecute el programa carga la vista y lanza la aplicación</td>
   </tr>
   <tr>
-    <td>ModeloDeDatos</td>
-    <td>Esta clase implementa el patrón de diseño singleton y gestiona las instancias de los modelos de datos</td>
+          <td>ModeloDeDatos.java</td>
+          <td>Esta clase implementa el patrón de diseño singleton y gestiona las instancias de los modelos de datos</td>
   </tr>
   <tr>
-    <td>ListaDobleUsuario</td>
-    <td>Esta clase implementa los metodos para almacenar y gestionar usuarios, guarda estos en archivos.txt para la persistencia de los datos</td>
+          <td>ListaDobleUsuario.java</td>
+          <td>Esta clase implementa los metodos para almacenar y gestionar usuarios, guarda estos en archivos.txt para la persistencia de los datos</td>
   </tr>  
   <tr>
-    <td>PilaStack_Juego</td>
-    <td>Esta clase plementa tres pilas Stack que gestionan los diferentes archivos.txt y pilas de juegos en la aplicación</td>
+          <td>PilaStack_Juego.java</td>
+          <td>Esta clase plementa tres pilas Stack que gestionan los diferentes archivos.txt y pilas de juegos en la aplicación</td>
   </tr>
   <tr>
-    <td>Nodo_Usuario</td>
-    <td>Esta clase implementa los atributos y metodos necesarios para cargar la información de usuario en la lista usuario</td>
+          <td>Nodo_Usuario.java</td>
+          <td>Esta clase implementa los atributos y metodos necesarios para cargar la información de usuario en la lista usuario</td>
   </tr>
   <tr>
-    <td>Nodo_Juego</td>
-    <td>Esta clase implementa los atributos y metodos necesarios para cargar la información de los juegos en las pilasStack</td>
+          <td>Nodo_Juego.java</td>
+          <td>Esta clase implementa los atributos y metodos necesarios para cargar la información de los juegos en las pilasStack</td>
   </tr>
   <tr>
-    <td>Styles.css</td>
-    <td>Esta hoja.css implemeta los estlos para la vista principal</td>
+          <td>Styles.css</td>
+          <td>Esta hoja.css implemeta los estlos para la vista principal</td>
   </tr>
   
   <tr>
-    <td>Styles_Dark.css</td>
-    <td>Esta hoja.css implemeta los estlos para la vista principal</td>
+          <td>Styles_Dark.css</td>
+          <td>Esta hoja.css implemeta los estlos para la vista principal</td>
   </tr>
           
 </table>
 
 <table align="center"> 
       <tr>
-            <h3 align="center">Tabla De Vistas</h3>
+            <h3 align="center">Tabla de Vistas</h3>
       </tr>
       <tr>
             <th>Vista</th>
@@ -97,6 +103,36 @@ Acontinuación tenemos la explicación o la demostración de de la solucion en e
             <td>El .fxml es la vista hecha con javaFx, el contrrolador se encarga de implementar los metodos de escritura y lectura de los datos de los usuarios</td>
       </tr>
 </table>
+
+## Caps y explicación de métodos
+
+Metodos para verificar si el usuario se encuentra contenido en la ista, uno verifica por el correo y el otro por NickName del usuario ya que no sepueden repetir niguno de estos detos en dos cuentas
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/a80ae247-a80d-4325-b9df-4767a8ca1650)
+
+Este metodo retorna un observableList, después de llanarlo con todos los usuarios que hay en la listaDobleUsuarios.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/14c89345-209a-493d-89c2-12e379931059)
+
+Este metodo verifiaca que el usuario nuevo no esté registrado, utilizando para esto los primeros métodos mencionados, luego sigue con la creación del usuario si este no existe.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/0407785f-7337-4a7f-9008-3339cfbb3e7f)
+
+Este método llama a el método getCrearUsuario y lo asigna en la lista dependiendo de si la cabecera de la lista es nula o no.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/c7c4f02d-54db-45da-9dde-2f7cc9c5cd3e)
+
+Este método escribe en el archivo.txt de los Usuarios todos los usuarios en la listaU.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/e3d525ff-8b91-4b76-bd38-a964b6ba78cd)
+
+Al contrario del metodo anterio este metodo lo que hace es leer los datos contenidos en el archivo.txt de los Usuarios y los añade a la lista con el metodo addUsuario()
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/8910ac43-222c-46c9-99ff-fe09bc93ab50)
+
+Este metod se encarga de llanar la lista de usuarios con los datos obtenidos al leer el archivo.txt de los usuarios por lo cual no contiene niguna restricción
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/70503466-49ea-48d6-b6ce-d7380dcbf780)
 
 ## Prototipo
 
