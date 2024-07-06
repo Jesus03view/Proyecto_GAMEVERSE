@@ -643,6 +643,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
 
             flowAmigos.getChildren().clear();
             flowAmigos.getChildren().addAll(filtroAmigos);
+
         }
     }
 }

@@ -12,7 +12,7 @@ import java.util.Stack;
 import javax.swing.JOptionPane;
 
 public class PilaStack_Juego {
-    
+
     private final Stack<Nodo_Juego> pilaJB;
     private final Stack<Nodo_Juego> pilaJL;
 
@@ -28,7 +28,7 @@ public class PilaStack_Juego {
     public Stack<Nodo_Juego> getPilaJL() {
         return pilaJL;
     }
-    
+
     //Metodos PilaJB
     public void setPushJuego(Nodo_Juego j) {
         int pos = pilaJB.indexOf(j);
@@ -49,7 +49,7 @@ public class PilaStack_Juego {
         }
         return pila;
     }
-    
+
     public Nodo_Juego getJuegoNick(String NickUser) {
         for (Nodo_Juego aux : pilaJB) {
             if (aux.getNickUser().equals(NickUser)) {
@@ -103,7 +103,6 @@ public class PilaStack_Juego {
     }
 
     //Metodos pilaJL
- 
     public void guardarJuegos(Stack<Nodo_Juego> pila) {
 
         String direccion = System.getProperty("user.dir") + "\\src\\ArchivosBase_TXT\\Archivo_Juegos_Biblioteca.txt";
@@ -145,7 +144,6 @@ public class PilaStack_Juego {
                 String NickUser = atributos[0];
                 String nombre = atributos[1];
                 String URL = atributos[2];
-                
 
                 Nodo_Juego juego = new Nodo_Juego(NickUser, nombre, URL);
 
@@ -157,5 +155,4 @@ public class PilaStack_Juego {
             System.out.println("Error al cargar los datos desde Archivo_Juegos_Biblioteca.txt: " + e.getMessage());
         }
     }
-
 }
