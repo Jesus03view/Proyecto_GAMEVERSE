@@ -1,6 +1,0 @@
-Yohan22, Fall Guys, 9000.00, /Images/Games_images/Ima_Fall_Guys.png
-Yohan22, Red Dead, 9000.00, /Images/Games_images/Ima_Red_Dead.png
-Yohan22, Hogwarts legacy, 9000.00, /Images/Games_images/Ima_Hogwarts.png
-Yohan22, GTA Grand Theft Auto V, 9000.00, /Images/Games_images/Ima_GTA.png
-Yohan22, Fornite, 9000.00, /Images/Games_images/Ima_Fornite.png
-Yohan22, God Of War, 9000.00, /Images/Games_images/Ima_God_Of_War.png

@@ -47,6 +47,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private final PilaStack_Juego pila = ModeloDeDatos.obtenerInstancia().getPilaJ();
     private ObservableList<Pane> amigos;
     private ObservableList<Pane> filtroAmigos;
+    private ObservableList<Image> images = FXCollections.observableArrayList();
 
     @FXML
     private Button btn_carrito;
@@ -572,7 +573,6 @@ public class Controller_View_GAME_VERSE implements Initializable {
         pane.getChildren().addAll(imageV, pane2);
         flowpaneGames.getChildren().add(pane);
 
-        System.out.println("Devió guardarse:" + getNombre);
     }
 
     @FXML

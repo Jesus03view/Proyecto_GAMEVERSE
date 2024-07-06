@@ -1,7 +1,9 @@
 package Controllers;
 
 import Models.EstructurasDeDatos.ListaDobleUsuario;
+import Models.EstructurasDeDatos.PilaStack_Juego;
 import Models.ModeloDeDatos;
+import Models.Nodos.Nodo_Juego;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,7 +24,7 @@ import javafx.stage.Stage;
 public class Controller_View_Sign_in implements Initializable {
 
     private ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
-
+    private PilaStack_Juego pilaJ = ModeloDeDatos.obtenerInstancia().getPilaJ();
     @FXML
     private TextField txt_Nombre;
     @FXML
@@ -114,6 +116,12 @@ public class Controller_View_Sign_in implements Initializable {
 
                                     listU.addUsuarioInicio(txtNombre, txtIden, txtCell, txtGmail, txtNickName, txtPassword_1);
                                     listU.guardarDatosEnArchivoUsuarios(listU);
+                                    Nodo_Juego juego = new Nodo_Juego();
+                                    juego.setNickUser(txtNickName.getText());
+                                    juego.setNombre("NULL");
+                                    juego.setURL_ima("NULL");
+                                    pilaJ.setPushJuego(juego);
+                                    pilaJ.guardarJuegos(pilaJ.getPilaJB());
                                     if (listU.getnUsuarios() != 0) {
                                         txtPassword_2.setText("");
                                         closeWindow();
