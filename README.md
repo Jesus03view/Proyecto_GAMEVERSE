@@ -1,6 +1,6 @@
-<h1 align="center">GAME_VERSE_FINAL_PROJECT</h1>
+# <h1 align="center">GAME_VERSE_FINAL_PROJECT</h1>
 
-# Integrantes:
+<h1>Integrantes:</h1>
 
 - <h4>Jesús Abiata Lopéz Llorente</h4>
 - <h4>Juan Ángel Ramos Hernández</h4>
@@ -15,7 +15,6 @@ A continuación, se estará dando una breve explicación del funcionamiento del 
 En la siguiente vista se podrá apreciar lo que sería el login (Sistema de autenticación de usuarios) se debe llenar los campos para iniciar la sesión, en caso de que no tenga un usuario registrado puede dirigirse hasta el apartado de registro, si preciona el texto "Singn in"que se encuentra ubicada el la parte inferior de la pantalla después del botón iniciar sesión ( Login ): ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/dbf0f130-0606-4c26-a1aa-7efbace57f0b)
 
       
-
 ![Vista del Login](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/2f04fffd-02cf-44e7-b232-2b20afc6f2c8)
 
 ### Vista de Registro (Crea tu usuario)
@@ -29,6 +28,27 @@ En esta vista te encontrás con los campos correspondientes para la creacion de 
 Esta es la vista donde el usuario podrá ingresar despues de llenar sus datos de incio, tendrá una variedad de opciones bastante amplias esto relacionado con la compra de video juegos y convivencia con amigos, así como tambien opciones propias de cada usuario como personalizár su entorno con el modo oscuro y añadir a sus amigos jugadores ya registrados en el programa.
 
 ![Vista Principal](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/4823dcdf-488e-4e62-8fd7-644f7156c246)
+
+### Apartado de Amigos
+
+Aquí podrás mirar el estado de tus amigos buscar un amigo por su nombre y agregar nuevos amigos.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/0d8b4b9a-60d2-4b6a-92b7-643abaaabd4b)
+
+Acá está el espació para agregar nuevos amigos:
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/42345d08-c014-465e-a71a-7dbbdd76365e)
+
+
+### Apartado de Perfil
+
+Acá en este apartado tendrás varias opciones, para el entorno visual, para la cuenta y una opción para cerrar la sesión.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/8f19a407-3c62-415e-9183-9e41ba38576a)
+
+Así se vé el entorno con el modo oscuro:
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/1f3a0df3-c25f-444c-985f-f7879332d5c3)
 
 ## Manual de Desarrollador
 
@@ -142,7 +162,8 @@ Metodo para agregar juegos a la pila de Juegos en la biblioteca.
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/91eb54f6-89bf-4825-b1a5-2ac7d0687f13)
 
-Este metodo obtiene por el NickName de un usuario todos los juegos de la pila de juegos en la biblioteca que correspondan a este jugador ya que estos se identifican por su dueño (Usuario).
+Este metodo obtiene por el NickName de un usuario todos los juegos de la pila de juegos en la biblioteca que correspondan a este jugador ya que estos se identifican por su dueño 
+(Usuario).
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/e0d6a0d9-f567-464b-b287-c503f44f323f)
 
