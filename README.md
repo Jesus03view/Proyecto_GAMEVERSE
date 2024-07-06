@@ -134,6 +134,30 @@ Este metod se encarga de llanar la lista de usuarios con los datos obtenidos al 
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/70503466-49ea-48d6-b6ce-d7380dcbf780)
 
+Clase que gestiona las estructuras de datos, Esta clase crea una uníca instancía de las pilas y la listaUsuario para que se manejen los mismos datos durante la ejecución y evitar errores (Clase Singleton).
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/ea61c5b3-f256-46b7-b2ab-2bf7951cce92)
+
+Metodo para agregar juegos a la pila de Juegos en la biblioteca.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/91eb54f6-89bf-4825-b1a5-2ac7d0687f13)
+
+Este metodo obtiene por el NickName de un usuario todos los juegos de la pila de juegos en la biblioteca que correspondan a este jugador ya que estos se identifican por su dueño (Usuario).
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/e0d6a0d9-f567-464b-b287-c503f44f323f)
+
+Este metodo es similar al anterio la unica diferencia es de que este metodo solo retorna un juego dado el NickName del Usuario.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/eadbec4f-4f25-48f2-a32f-79b873886f96)
+
+Este metodo elimina de la pila de juegos en la biblioteca a un juego dado el NickName del cliente.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/2ce301ab-ff58-415b-ad78-d2d1fef296dd)
+
+Este metodo es capaz de clonar la pila de los juegos para luego ser asignada o utilizada sin afectar a la pila principal.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/9d621b78-9740-467d-9d63-f9a781a40338)
+
 ## Prototipo
 
 Puedes ver el prototipo del proyecto en el siguiente enlace: [Prototipo en Figma](https://www.figma.com/design/QcOLM4VnaQjJViVNxaTUtt/Prototype_GAME_VERSE?node-id=0-1&t=8u0L6xB1ygdAVBs2-1)
