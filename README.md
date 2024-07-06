@@ -30,7 +30,7 @@ Acontinuación tenemos la explicación o la demostración de de la solucion en e
 
 <table align="center">
   <tr>
-    <h5 align="center">Tabla de Clases</t5>
+    <h3 align="center">Tabla de Clases</t3>
   </tr>
   <tr>
     <th>Clases</th>
@@ -60,6 +60,42 @@ Acontinuación tenemos la explicación o la demostración de de la solucion en e
     <td>Nodo_Juego</td>
     <td>Esta clase implementa los atributos y metodos necesarios para cargar la información de los juegos en las pilasStack</td>
   </tr>
+  <tr>
+    <td>Styles.css</td>
+    <td>Esta hoja.css implemeta los estlos para la vista principal</td>
+  </tr>
+  
+  <tr>
+    <td>Styles_Dark.css</td>
+    <td>Esta hoja.css implemeta los estlos para la vista principal</td>
+  </tr>
+          
+</table>
+
+<table align="center"> 
+      <tr>
+            <h3 align="center">Tabla De Vistas</h3>
+      </tr>
+      <tr>
+            <th>Vista</th>
+            <th>Controllador</th>
+            <th>Cescripción</th>
+      </tr>
+      <tr>
+            <td>View_GAME_VERSE.fxml</td>
+            <td>Controller_View_GAME_VERSE.java</td>
+            <td>El .fxml es la vista hecha con javaFx, el contrrolador se encarga de implementar he asignar las acciones de los botones y demás</td>
+      </tr>
+      <tr>
+            <td>View_Login.fxml</td>
+            <td>Controller_View_Login.java</td>
+            <td>El .fxml es la vista hecha con javaFx, el contrrolador se encarga de implementar los eventos onClick </td>
+      </tr>
+      <tr>
+            <td>View_Sign_in.fxml</td>
+            <td>Controller_View_Sing_in.java</td>
+            <td>El .fxml es la vista hecha con javaFx, el contrrolador se encarga de implementar los metodos de escritura y lectura de los datos de los usuarios</td>
+      </tr>
 </table>
 
 ## Prototipo
