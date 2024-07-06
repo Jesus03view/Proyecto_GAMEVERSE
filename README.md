@@ -138,58 +138,73 @@ Acontinuación tenemos la explicación o la demostración de de la solucion en e
 
 ## Caps y explicación de métodos
 
-Metodos para verificar si el usuario se encuentra contenido en la ista, uno verifica por el correo y el otro por NickName del usuario ya que no sepueden repetir niguno de estos detos en dos cuentas
+1. Metodos para verificar si el usuario se encuentra contenido en la ista, uno verifica por el correo y el otro por NickName del usuario ya que no sepueden repetir niguno de estos detos en dos cuentas
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/a80ae247-a80d-4325-b9df-4767a8ca1650)
 
-Este metodo retorna un observableList, después de llanarlo con todos los usuarios que hay en la listaDobleUsuarios.
+2. Este metodo retorna un observableList, después de llanarlo con todos los usuarios que hay en la listaDobleUsuarios.
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/14c89345-209a-493d-89c2-12e379931059)
 
-Este metodo verifiaca que el usuario nuevo no esté registrado, utilizando para esto los primeros métodos mencionados, luego sigue con la creación del usuario si este no existe.
+3. Este metodo verifiaca que el usuario nuevo no esté registrado, utilizando para esto los primeros métodos mencionados, luego sigue con la creación del usuario si este no existe.
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/0407785f-7337-4a7f-9008-3339cfbb3e7f)
 
-Este método llama a el método getCrearUsuario y lo asigna en la lista dependiendo de si la cabecera de la lista es nula o no.
+4. Este método llama a el método getCrearUsuario y lo asigna en la lista dependiendo de si la cabecera de la lista es nula o no.
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/c7c4f02d-54db-45da-9dde-2f7cc9c5cd3e)
 
-Este método escribe en el archivo.txt de los Usuarios todos los usuarios en la listaU.
+5. Este método escribe en el archivo.txt de los Usuarios todos los usuarios en la listaU.
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/e3d525ff-8b91-4b76-bd38-a964b6ba78cd)
 
-Al contrario del metodo anterio este metodo lo que hace es leer los datos contenidos en el archivo.txt de los Usuarios y los añade a la lista con el metodo addUsuario()
+6. Al contrario del metodo anterio este metodo lo que hace es leer los datos contenidos en el archivo.txt de los Usuarios y los añade a la lista con el metodo addUsuario()
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/8910ac43-222c-46c9-99ff-fe09bc93ab50)
 
-Este metod se encarga de llanar la lista de usuarios con los datos obtenidos al leer el archivo.txt de los usuarios por lo cual no contiene niguna restricción
+7. Este metod se encarga de llanar la lista de usuarios con los datos obtenidos al leer el archivo.txt de los usuarios por lo cual no contiene niguna restricción
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/70503466-49ea-48d6-b6ce-d7380dcbf780)
+
+8. Metodo para agregar juegos a la pila de Juegos en la biblioteca.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/91eb54f6-89bf-4825-b1a5-2ac7d0687f13)
+
+9. Este metodo obtiene por el NickName de un usuario todos los juegos de la pila de juegos en la biblioteca que correspondan a este jugador ya que estos se identifican por su dueño 
+(Usuario).
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/e0d6a0d9-f567-464b-b287-c503f44f323f)
+
+10. Este metodo es similar al anterio la unica diferencia es de que este metodo solo retorna un juego dado el NickName del Usuario.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/eadbec4f-4f25-48f2-a32f-79b873886f96)
+
+11. Este metodo elimina de la pila de juegos en la biblioteca a un juego dado el NickName del cliente.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/2ce301ab-ff58-415b-ad78-d2d1fef296dd)
+
+12. Este metodo es capaz de clonar la pila de los juegos para luego ser asignada o utilizada sin afectar a la pila principal.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/9d621b78-9740-467d-9d63-f9a781a40338)
+
+### Clase Singleton
 
 Clase que gestiona las estructuras de datos, Esta clase crea una uníca instancía de las pilas y la listaUsuario para que se manejen los mismos datos durante la ejecución y evitar errores (Clase Singleton).
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/ea61c5b3-f256-46b7-b2ab-2bf7951cce92)
 
-Metodo para agregar juegos a la pila de Juegos en la biblioteca.
+### Metodos de la vista del Login
 
-![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/91eb54f6-89bf-4825-b1a5-2ac7d0687f13)
+1. Este metod gestiona los eventos de click en los botones para así tomar una decisión.
 
-Este metodo obtiene por el NickName de un usuario todos los juegos de la pila de juegos en la biblioteca que correspondan a este jugador ya que estos se identifican por su dueño 
-(Usuario).
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/88d67de4-5c2e-4977-be8f-caa206cb1439)
 
-![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/e0d6a0d9-f567-464b-b287-c503f44f323f)
+2. Metodo para inciar sesión en el programa, este metodo valida toda la información sobr de los campos de texto.
 
-Este metodo es similar al anterio la unica diferencia es de que este metodo solo retorna un juego dado el NickName del Usuario.
-
-![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/eadbec4f-4f25-48f2-a32f-79b873886f96)
-
-Este metodo elimina de la pila de juegos en la biblioteca a un juego dado el NickName del cliente.
-
-![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/2ce301ab-ff58-415b-ad78-d2d1fef296dd)
-
-Este metodo es capaz de clonar la pila de los juegos para luego ser asignada o utilizada sin afectar a la pila principal.
-
-![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/9d621b78-9740-467d-9d63-f9a781a40338)
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/a63fa275-ea2e-4711-b546-c063a1eaad0c)
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/131ee9ba-9adc-460f-a020-841ec343567c)
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/febaea37-fe0f-4613-aed0-76376fc42b2d)
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/ea1198e7-a2df-4adc-8840-d5280afdafa5)
 
 ## Prototipo
 
