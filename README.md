@@ -26,8 +26,7 @@ Esta es la vista donde el usuario podrá ingresar despues de llenar sus datos de
 
 ## Manual de Desarrollador
 
-Aquí puedes incluir la documentación específica para desarrolladores, como la estructura del proyecto, cómo configurarlo y ejecutarlo, y cualquier otro detalle técnico relevante.
-
+Acontinuación tenemos la explicación o la demostración de de la solucion en el codigo fuente(Contenido para desarrolladores).
 ## Prototipo
 
 Puedes ver el prototipo del proyecto en el siguiente enlace: [Prototipo en Figma](https://www.figma.com/design/QcOLM4VnaQjJViVNxaTUtt/Prototype_GAME_VERSE?node-id=0-1&t=8u0L6xB1ygdAVBs2-1)
