@@ -10,14 +10,14 @@
 
 A continuación, se estará dando una breve explicación del funcionamiento del programa para los usuarios del mismo. Esto se logra apreciar de manera clara y sencilla en las siguientes presentaciones.
 
-### Vista del Login (Inicio)
+### Vista del Login (Inicio).
 
 En la siguiente vista se podrá apreciar lo que sería el login (Sistema de autenticación de usuarios) se debe llenar los campos para iniciar la sesión, en caso de que no tenga un usuario registrado puede dirigirse hasta el apartado de registro, si preciona el texto "Singn in"que se encuentra ubicada el la parte inferior de la pantalla después del botón iniciar sesión ( Login ): ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/dbf0f130-0606-4c26-a1aa-7efbace57f0b)
 
       
 ![Vista del Login](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/2f04fffd-02cf-44e7-b232-2b20afc6f2c8)
 
-### Vista de Registro (Crea tu usuario)
+### Vista de Registro (Crea tu usuario).
 
 En esta vista te encontrás con los campos correspondientes para la creacion de un nuevo usuario para el programa, debes asegurarte de que los datos estén ubicados correctamente y que el dato realmente corresponda a la información solicitada para que no ocurranigún error a la hora de crear el usuario.
 
@@ -29,7 +29,7 @@ Esta es la vista donde el usuario podrá ingresar despues de llenar sus datos de
 
 ![Vista Principal](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/4823dcdf-488e-4e62-8fd7-644f7156c246)
 
-### Apartado de Amigos
+### Apartado de Amigos.
 
 Aquí podrás mirar el estado de tus amigos buscar un amigo por su nombre y agregar nuevos amigos.
 
@@ -40,7 +40,7 @@ Acá está el espació para agregar nuevos amigos:
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/42345d08-c014-465e-a71a-7dbbdd76365e)
 
 
-### Apartado de Perfil
+### Apartado de Perfil.
 
 Acá en este apartado tendrás varias opciones, para el entorno visual, para la cuenta y una opción para cerrar la sesión.
 
@@ -50,7 +50,19 @@ Así se vé el entorno con el modo oscuro:
 
 ![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/1f3a0df3-c25f-444c-985f-f7879332d5c3)
 
-## Manual de Desarrollador
+### Apartado para añadir juegos al carrito o comprarlos directamente.
+
+En este apartado puedes mirar los requisitos funcionales sobre el juego que desea comprar y las diferentes ocpiones para añadir los juegos a la lista de deseos o al carrito.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/66b632fc-6fe6-49f3-99ab-70085a40f5f8)
+
+### Apartado de pagos.
+
+Acá podrá realizar todas o finlaizar las compras de los juegos que desea adquirir, selecionando su banco preferido eh ingresando los datos correspondientes.
+
+![image](https://github.com/Jesus03view/Proyecto_GAMEVERSE/assets/171627110/2c14a4ef-22ae-46fb-bb2b-38889f5a690f)
+
+## Manual de Desarrollador:
 
 Acontinuación tenemos la explicación o la demostración de de la solucion en el codigo fuente(Contenido para desarrolladores).
 
