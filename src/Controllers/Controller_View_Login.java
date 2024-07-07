@@ -1,6 +1,7 @@
 package Controllers;
 
 import Models.EstructurasDeDatos.ListaDobleUsuario;
+import Models.EstructurasDeDatos.PilaStack_Juego;
 import Models.ModeloDeDatos;
 import Models.Nodos.Nodo_Usuario;
 import java.io.IOException;
@@ -25,6 +26,7 @@ import javafx.stage.WindowEvent;
 public class Controller_View_Login implements Initializable {
 
     private ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
+    private PilaStack_Juego pilaJ = ModeloDeDatos.obtenerInstancia().getPilaJ();
 
     @FXML
     private TextField txt_User;
@@ -44,6 +46,7 @@ public class Controller_View_Login implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         listU.cargarDatosDesdeArchivoUsuarios();
+        pilaJ.cargarJuegos();
     }
 
     @FXML

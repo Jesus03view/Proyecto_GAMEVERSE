@@ -20,15 +20,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -36,7 +40,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -47,7 +50,9 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private final PilaStack_Juego pila = ModeloDeDatos.obtenerInstancia().getPilaJ();
     private ObservableList<Pane> amigos;
     private ObservableList<Pane> filtroAmigos;
-    private ObservableList<Image> images = FXCollections.observableArrayList();
+    private ObservableList<Pane> jugadores;
+    private ObservableList<Pane> filtroJugadores;
+    private ObservableList<Pane> enCarrito;
 
     @FXML
     private Button btn_carrito;
@@ -191,6 +196,114 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private FlowPane flowAddAmigos;
     @FXML
     private Pane PanelAmigos;
+    @FXML
+    private ScrollPane scrollPane_2;
+    @FXML
+    private AnchorPane anchorP2;
+    @FXML
+    private Pane M_Red;
+    @FXML
+    private Pane M_FC;
+    @FXML
+    private Pane M_Hogwarts;
+    @FXML
+    private Pane M_Grand;
+    @FXML
+    private Pane M_God;
+    @FXML
+    private Pane M_GhostRunner;
+    @FXML
+    private Pane M_Fornite;
+    @FXML
+    private Pane M_MultiVersus;
+    @FXML
+    private Pane M_FallOut;
+    @FXML
+    private Pane M_Valorant;
+    @FXML
+    private Pane M_Fall;
+    @FXML
+    private Pane M_TheHunter;
+    @FXML
+    private Pane M_Genshin;
+    @FXML
+    private Pane M_F1;
+    @FXML
+    private Pane M_Spider;
+    @FXML
+    private ScrollPane scrollPaneCarrito;
+    @FXML
+    private AnchorPane anchorP1;
+    @FXML
+    private Pane Red1;
+    @FXML
+    private Pane FC1;
+    @FXML
+    private Pane Hogwarts1;
+    @FXML
+    private Pane Grand1;
+    @FXML
+    private Pane God1;
+    @FXML
+    private Pane GhostRunner1;
+    @FXML
+    private Pane Fornite1;
+    @FXML
+    private Pane MultiVersus1;
+    @FXML
+    private Pane FallOut1;
+    @FXML
+    private Pane Valorant1;
+    @FXML
+    private Pane Fall1;
+    @FXML
+    private Pane TheHunter1;
+    @FXML
+    private Pane Genshin1;
+    @FXML
+    private Pane F11;
+    @FXML
+    private Pane Spider1;
+    @FXML
+    private Pane Panel_Cambiar_Clave;
+    @FXML
+    private Pane PanelValidacion;
+    @FXML
+    private TextField txt_NewNickName;
+    @FXML
+    private Button btn_ValidarClave;
+    @FXML
+    private PasswordField txt_VPassWord;
+    @FXML
+    private Pane PanelCambiar;
+    @FXML
+    private TextField txt_NewPassword;
+    @FXML
+    private Button btn_AceptarCalve;
+    @FXML
+    private PasswordField txt_VNewPassword;
+    @FXML
+    private Text txt_Texto;
+    @FXML
+    private FlowPane flowpaneGamesCarrito;
+    @FXML
+    private Button btn_IrComrprar;
+    @FXML
+    private ScrollPane scrollPaneListaD;
+    @FXML
+    private AnchorPane anchorP3;
+    @FXML
+    private FlowPane flowpaneGamesListaD;
+    @FXML
+    private Button btn_CERRAR;
+    @FXML
+    private HBox contenedorApartados;
+    @FXML
+    private Button IrAhora;
+    @FXML
+    private Pane PanelInfo_Red;
+    @FXML
+    private FlowPane FlowAcomprar;
 
     /**
      * Initializes the controller class.
@@ -203,15 +316,23 @@ public class Controller_View_GAME_VERSE implements Initializable {
         // TODO      
         amigos = FXCollections.observableArrayList();
         filtroAmigos = FXCollections.observableArrayList();
+        jugadores = FXCollections.observableArrayList();
+        filtroJugadores = FXCollections.observableArrayList();
 
         anchorP.prefWidthProperty().bind(scrollPane.widthProperty());
         anchorP.prefHeightProperty().bind(scrollPane.heightProperty());
         flowpaneGames.prefWidthProperty().bind(anchorP.widthProperty());
         flowpaneGames.prefHeightProperty().bind(anchorP.heightProperty());
 
+        anchorP1.prefWidthProperty().bind(scrollPaneCarrito.widthProperty());
+        anchorP1.prefHeightProperty().bind(scrollPaneCarrito.heightProperty());
+        flowpaneGamesCarrito.prefWidthProperty().bind(anchorP1.widthProperty());
+        flowpaneGamesCarrito.prefHeightProperty().bind(anchorP1.heightProperty());
+
         listU.cargarDatosDesdeArchivoUsuarios();
 
         pila.cargarJuegos();
+        pila.cargarJuegos2();
     }
 
     public Label getTxt_btn_P() {
@@ -269,6 +390,112 @@ public class Controller_View_GAME_VERSE implements Initializable {
         int g = (int) (color.getGreen() * 255);
         int b = (int) (color.getBlue() * 255);
         return String.format("#%02X%02X%02X", r, g, b);
+    }
+
+    private void crearJugadores() {
+        Image image = new Image(getClass().getResourceAsStream("/Images/Icono_add_Amigo2.png"));
+        Image image2 = new Image(getClass().getResourceAsStream("/Images/Icono_add_Amigo1.png"));
+        ObservableList<Nodo_Usuario> obsAux = FXCollections.observableArrayList();
+        obsAux = listU.getUsuarios();
+
+        if (!obsAux.isEmpty()) {
+            jugadores.clear();
+            Nodo_Usuario activo = listU.BuscarNick(labelNick.getText());
+            String[] amigosAux = activo.getAmigos().split(". ");
+
+            for (Nodo_Usuario usuario : obsAux) {
+                if (usuario == null || usuario.getNombreJugador().equals(labelNick.getText())) {
+                    continue;
+                }
+
+                boolean isAmigo = false;
+                for (String amigo : amigosAux) {
+                    if (amigo.equals(usuario.getNombreJugador())) {
+                        isAmigo = true;
+                        break;
+                    }
+                }
+
+                if (isAmigo) {
+                    continue;
+                }
+
+                Pane pane = new Pane();
+                pane.getStyleClass().add("paneAmigos");
+                pane.setPrefWidth(200);
+                pane.setPrefHeight(40);
+
+                Pane pane2 = new Pane();
+                pane2.setPrefWidth(160);
+                pane2.setPrefHeight(30);
+                pane2.setLayoutX(36);
+                pane2.setLayoutY(5);
+                pane2.setId("pane");
+
+                ImageView ima = new ImageView(image);
+                ima.setPreserveRatio(true);
+                ima.setFitWidth(30);
+                ima.setFitHeight(25);
+                ima.setLayoutX(120);
+                ima.setLayoutY(2);
+
+                Label label = new Label(usuario.getNombreJugador());
+                label.setLayoutX(21);
+                label.setLayoutY(6);
+                label.setId("labelNick");
+                label.setFont(Font.font("System", FontWeight.BOLD, 14));
+
+                ima.setOnMouseClicked(event -> {
+                    String nombreJugador = label.getText();
+                    Nodo_Usuario newUser = listU.BuscarNick(labelNick.getText());
+                    String LAmigos = newUser.getAmigos();
+                    if (!LAmigos.isEmpty()) {
+                        newUser.setAmigos(LAmigos + ". " + nombreJugador);
+                        listU.eliminarUsuario(labelNick.getText());
+                        listU.addUsuario(newUser.getNombre(), newUser.getIdentificacion(), newUser.getCelular(),
+                                newUser.getCorreo(), newUser.getNombreJugador(), newUser.getClave(), newUser.getAmigos());
+                        listU.guardarDatosEnArchivoUsuarios(listU);
+                    }
+                    flowAddAmigos.getChildren().remove(pane);
+
+                });
+
+                ima.setOnMouseEntered(value -> {
+                    ima.setImage(image2);
+                });
+
+                ima.setOnMouseExited(value -> {
+                    ima.setImage(image);
+                });
+                Label label1 = new Label(usuario.getNombreJugador().substring(0, 1));
+                label1.setPrefWidth(20);
+                label1.setLayoutX(0);
+                label1.setLayoutY(0);
+                label1.setId("label2");
+                label1.setTextFill(Color.WHITE);
+                label1.setFont(Font.font("System", FontWeight.BOLD, 25));
+
+                Button button = new Button("", label1);
+                button.setPrefWidth(44);
+                button.setPrefHeight(44);
+                button.setLayoutX(0);
+                button.setLayoutY(0);
+                button.setId("button");
+                assignRandomColor(button);
+
+                Circle circle = new Circle(6);
+                circle.setFill(Color.FORESTGREEN);
+                circle.setLayoutX(38);
+                circle.setLayoutY(35);
+
+                pane2.getChildren().addAll(label, ima);
+                pane.getChildren().addAll(pane2, button, circle);
+                jugadores.add(pane);
+            }
+
+            flowAddAmigos.getChildren().clear();
+            flowAddAmigos.getChildren().addAll(jugadores);
+        }
     }
 
     private void crearAmigos(Nodo_Usuario user) {
@@ -381,15 +608,50 @@ public class Controller_View_GAME_VERSE implements Initializable {
             btn_addF.getStyleClass().removeAll("btnAfter");
             PanelAmigos.setVisible(true);
             PanelAddAmigos.setVisible(false);
+            cargarAmigos();
         } else if (e.getSource().equals(btn_addF)) {
             btn_addF.getStyleClass().add("btnAfter");
             btn_Friends.getStyleClass().removeAll("btnAfter");
             PanelAmigos.setVisible(false);
             PanelAddAmigos.setVisible(true);
+            crearJugadores();
         } else if (e.getSource().equals(btn_Shop)) {
 
             mostrarJuegos();
-
+            if (!scrollPane.isVisible()) {
+                scrollPane.setVisible(true);
+                contenedorApartados.setVisible(false);
+                
+                scrollPaneCarrito.setVisible(false);
+                scrollPaneListaD.setVisible(false);                
+            }
+        } else if (e.getSource().equals(btn_carrito)) {
+            webView.getEngine().load(null);
+            mostrarJuegos();
+            if (!scrollPaneCarrito.isVisible()) {
+                scrollPaneCarrito.setVisible(true);
+                scrollPane.setVisible(false);
+                contenedorApartados.setVisible(false);
+                scrollPaneListaD.setVisible(false);
+            }
+        } else if (e.getSource().equals(btn_ListD)) {
+            webView.getEngine().load(null);
+            if (!scrollPaneListaD.isVisible()) {
+                scrollPaneCarrito.setVisible(false);
+                scrollPane.setVisible(false);
+                contenedorApartados.setVisible(false);
+                scrollPaneListaD.setVisible(true);
+            }
+            mostrarJuegosLD();
+        } else if (e.getSource().equals(btn_IrComrprar)) {
+            webView.getEngine().load(null);
+            if (!panelDePago.isVisible()) {
+                scrollPane.setVisible(false);
+                scrollPaneCarrito.setVisible(false);
+                panelDePago.setVisible(true);
+                contenedorApartados.setVisible(false);
+                scrollPaneListaD.setVisible(false);
+            }
         } else if (e.getSource().equals(btn_CerrarS)) {
             webView.getEngine().load(null);
             try {
@@ -410,6 +672,134 @@ public class Controller_View_GAME_VERSE implements Initializable {
             }
         } else if (e.getSource().equals(btn_ModO)) {
             toggleStylesheets();
+        } else if (e.getSource().equals(btn_CClave)) {
+
+            txt_NewNickName.setText(labelNick.getText());
+            Panel_Cambiar_Clave.setVisible(!Panel_Cambiar_Clave.isVisible());
+            txt_Texto.setText("Hola " + labelNick.getText() + ", aquí puedes cambiar tu clave :)");
+
+        } else if (e.getSource().equals(btn_ValidarClave)) {
+
+            Alert a = new Alert(Alert.AlertType.NONE);
+
+            String user = txt_NewNickName.getText();
+            String pass = txt_VPassWord.getText();
+
+            Nodo_Usuario usuario = listU.BuscarNick(user);
+
+            if (usuario != null) {
+
+                if (!usuario.getNombreJugador().equals(user) && !usuario.getClave().equals(pass)) {
+                    a.setAlertType(Alert.AlertType.WARNING);
+                    a.setContentText("Tanto el usuario como la contraseña son invalidos" + "\n"
+                            + "Debe ingresar un usuario y una contraseña validas..!");
+                    a.setTitle("Advertencia..!");
+                    a.show();
+                    txt_NewNickName.setText("");
+                    txt_VPassWord.setText("");
+                    txt_NewNickName.requestFocus();
+                } else if (usuario.getNombreJugador().equals(user)) {
+
+                    if (usuario.getClave().equals(pass)) {
+                        txt_NewNickName.setText("");
+                        txt_VPassWord.setText("");
+                        a.setAlertType(Alert.AlertType.INFORMATION);
+                        a.setContentText("Proceda a cambiar su contraseña");
+                        a.setTitle("Información");
+                        a.show();
+                        PanelValidacion.setVisible(false);
+                        PanelCambiar.setVisible(true);
+                        txt_Texto.setText(labelNick.getText() + ", procede a cambiar tu clave...!! :)");
+                    } else {
+                        a.setAlertType(Alert.AlertType.WARNING);
+                        a.setContentText("Contraseña incorrecta" + "\n"
+                                + "Debe ingresar una contraseña valida");
+                        a.setTitle("Advertencia..!");
+                        a.show();
+                        txt_VPassWord.setText("");
+                        txt_VPassWord.requestFocus();
+                    }
+                } else {
+                    a.setAlertType(Alert.AlertType.WARNING);
+                    a.setContentText("Debe ingresar un nombre de usuario" + "\n"
+                            + "O un correo valido");
+                    a.setTitle("Advertencia..!");
+                    a.show();
+                    txt_NewNickName.setText("");
+                    txt_NewNickName.requestFocus();
+                }
+            } else {
+                a.setAlertType(Alert.AlertType.WARNING);
+                a.setContentText("Usuario no encontrado..!");
+                a.setTitle("Advertencia..!");
+                a.show();
+                txt_NewNickName.setText("");
+                txt_VPassWord.requestFocus();
+            }
+        } else if (e.getSource().equals(btn_AceptarCalve)) {
+            Alert a = new Alert(Alert.AlertType.NONE);
+
+            String user = labelNick.getText();
+
+            Nodo_Usuario usuario = listU.BuscarNick(user);
+
+            if (!txt_NewPassword.getText().isEmpty() || !txt_VNewPassword.getText().isEmpty()) {
+
+                if (txt_NewPassword.getText().equals(txt_VNewPassword.getText())) {
+
+                    boolean listo = listU.eliminarUsuario(labelNick.getText());
+
+                    usuario.setClave(txt_NewPassword.getText());
+
+                    if (listo) {
+                        txt_Texto.setText(labelNick.getText() + " Cambio de clave exitoso...!! :)");
+                        listU.addUsuario(usuario.getNombre(), usuario.getIdentificacion(), usuario.getCelular(),
+                                usuario.getCorreo(), usuario.getNombreJugador(), usuario.getClave(), usuario.getAmigos());
+
+                        a.setAlertType(Alert.AlertType.CONFIRMATION);
+                        a.setContentText("Cambio de clave exitoso..!");
+                        a.setTitle("Información..!");
+                        a.showAndWait();
+                    }
+
+                    listU.guardarDatosEnArchivoUsuarios(listU);
+
+                    txt_NewNickName.setText("");
+                    txt_VNewPassword.setText("");
+                    txt_NewPassword.setText("");
+                    txt_VPassWord.setText("");
+                    PanelValidacion.setVisible(true);
+                    PanelCambiar.setVisible(false);
+                    Panel_Cambiar_Clave.setVisible(false);
+                } else {
+                    txt_VNewPassword.setText("");
+                    txt_VNewPassword.requestFocus();
+                    a.setAlertType(Alert.AlertType.WARNING);
+                    a.setContentText("Ups.. Parce que su contraseña no coincide\n"
+                            + "Verifique y vuelva a intentar");
+                    a.setTitle("Advertencia..!");
+                    a.show();
+                }
+            }
+        } else if (e.getSource().equals(btn_CERRAR)) {
+            txt_NewNickName.setText("");
+            txt_VNewPassword.setText("");
+            txt_NewPassword.setText("");
+            txt_VPassWord.setText("");
+            PanelValidacion.setVisible(true);
+            PanelCambiar.setVisible(false);
+            Panel_Cambiar_Clave.setVisible(false);
+        } else if (e.getSource().equals(IrAhora)) {
+            panelDePago.setVisible(true);
+
+//            for (int i = 0; i < flowpaneGamesCarrito.getChildren().size(); i++) {
+//
+//                Pane p = (Pane) flowpaneGamesCarrito.getChildren().get(i);
+//                enCarrito.add(p);
+//            }
+//            for (Pane pane : enCarrito) {
+//                FlowAcomprar.getChildren().add(pane);
+//            }
         }
     }
 
@@ -421,7 +811,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
             webView = new WebView();
             WebEngine webEng = webView.getEngine();
 
-            webEng.load("https://youtu.be/NnyCWsA6KSI?si=9fRLdvVaOesBKBik ");
+            webEng.load("https://youtu.be/NnyCWsA6KSI?si=9fRLdvVaOesBKBik");
 
             webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
@@ -509,26 +899,198 @@ public class Controller_View_GAME_VERSE implements Initializable {
 
             panePresent.getChildren().clear();
             panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game7)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/HLUY1nICQRY?si=bMi5hUJPn0CRLT8q");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game8)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/b70uw0XxeLg?si=NGy38YrIYCd1uTIx");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game9)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/lGh8ZemDGek?si=HZOspT6NfUwEm8kc");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game10)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/dNYaEmIr_gs?si=JULnXTb_KCJV6Jce");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game11)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/gmA6MrX81z4?si=6ux6_6rUUgBVCtcn");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game12)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/VGOTYfGMyoE?si=4cQk_z9mMsliQZmS");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game13)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/QkkoHAzjnUs?si=hw3OafGS1bUq61tj");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game14)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/1O6Qstncpnc?si=n9KMnQvYgCWoBxyq");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
+        } else if (e.getSource().equals(btn_game15)) {
+            webView.getEngine().load(null);
+            webView = new WebView();
+            WebEngine webEng = webView.getEngine();
+
+            webEng.load("https://youtu.be/e_E9W2vsRbQ?si=rOsnmo2mVyf0YpCK");
+
+            webEng.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    webEng.executeScript("document.body.style.overflow = 'hidden';");
+                }
+            });
+
+            panePresent.getChildren().clear();
+            panePresent.getChildren().add(webView);
         }
     }
 
     public void mostrarJuegos() {
-        Nodo_Juego juego1 = pila.getJuegoNick(labelNick.getText());
+        try {
+            Nodo_Juego juego1 = pila.getJuegoNick(labelNick.getText());
 
-        if (!flowpaneGames.getChildren().isEmpty()) {
-            Stack<Nodo_Juego> pilaJT = pila.getJuegosNick(juego1.getNickUser());
+            if (juego1 == null) {
 
-            for (Nodo_Juego juego : pilaJT) {
-                for (int a = 0; a < flowpaneGames.getChildren().size(); a++) {
-                    Pane newPane = (Pane) flowpaneGames.getChildren().get(a);
-                    String[] nombre = juego.getNombre().split(" ");
-                    if (newPane.getId().equals(nombre[0])) {
-                        flowpaneGames.getChildren().remove(a);
+                System.out.println("No se encontró ningún juego para el usuario: " + labelNick.getText());
+                return;
+            }
+
+            if (!flowpaneGames.getChildren().isEmpty()) {
+                Stack<Nodo_Juego> pilaJT = pila.getJuegosNick(juego1.getNickUser());
+
+                for (Nodo_Juego juego : pilaJT) {
+                    for (int a = 0; a < flowpaneGames.getChildren().size(); a++) {
+                        Pane newPane = (Pane) flowpaneGames.getChildren().get(a);
+                        String[] nombre = juego.getNombre().split(" ");
+                        if (newPane.getId().equals(nombre[0])) {
+                            flowpaneGames.getChildren().remove(a);
+                        }
                     }
                 }
             }
+        } catch (NullPointerException e) {
+            System.out.println("Se produjo un error: " + e.getMessage());
         }
+    }
 
+    public void mostrarJuegosLD() {
+        try {
+            Nodo_Juego juego1 = pila.getJuegoNick2(labelNick.getText());
+
+            if (juego1 == null) {
+
+                System.out.println("No se encontró ningún juego para el usuario: " + labelNick.getText());
+                return;
+            }
+
+            if (!flowpaneGamesListaD.getChildren().isEmpty()) {
+                Stack<Nodo_Juego> pilaJL = pila.getJuegosNick2(juego1.getNickUser());
+
+                for (Nodo_Juego juego : pilaJL) {
+                    for (int a = 0; a < flowpaneGamesListaD.getChildren().size(); a++) {
+                        Pane newPane = (Pane) flowpaneGamesListaD.getChildren().get(a);
+                        String[] nombre = juego.getNombre().split(" ");
+                        if (newPane.getId().equals(nombre[0])) {
+                            flowpaneGamesListaD.getChildren().remove(a);
+                        }
+                    }
+                }
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Se produjo un error: " + e.getMessage());
+        }
     }
 
     private void crearJuegos(String getNombre, Float getPrecio, String getURL_ima) {
@@ -614,36 +1176,156 @@ public class Controller_View_GAME_VERSE implements Initializable {
                 datos_daviPlata.setVisible(false);
             }
         } else if (event.getSource().equals(cerrar_VPago)) {
-            panelDePago.setVisible(!panelDePago.isVisible());
+            panelDePago.setVisible(false);
+            scrollPane.setVisible(true);
         }
     }
 
     @FXML
-    private void filtrarAmigos(KeyEvent event) {
+    private void filtrarAmigos(KeyEvent e) {
 
-        String filtroNick = txtFiltroAmigo.getText().toLowerCase();
+        if (e.getSource().equals(txtFiltroAmigo)) {
+            String filtroNick = txtFiltroAmigo.getText().toLowerCase();
 
-        if (filtroNick.isEmpty()) {
+            if (filtroNick.isEmpty()) {
 
-            cargarAmigos();
+                cargarAmigos();
 
-        } else {
+            } else {
 
-            filtroAmigos.clear();
+                filtroAmigos.clear();
 
-            for (Pane p : amigos) {
+                for (Pane p : amigos) {
 
-                Label labelNickN = (Label) p.lookup("#labelNick");
+                    Label labelNickN = (Label) p.lookup("#labelNick");
 
-                if (labelNickN != null && labelNickN.getText().toLowerCase().contains(filtroNick)) {
+                    if (labelNickN != null && labelNickN.getText().toLowerCase().contains(filtroNick)) {
 
-                    filtroAmigos.add(p);
+                        filtroAmigos.add(p);
+                    }
                 }
+
+                flowAmigos.getChildren().clear();
+                flowAmigos.getChildren().addAll(filtroAmigos);
+
             }
+        } else if (e.getSource().equals(txtFiltroAddAmigo)) {
+            String filtroNick = txtFiltroAddAmigo.getText().toLowerCase();
 
-            flowAmigos.getChildren().clear();
-            flowAmigos.getChildren().addAll(filtroAmigos);
+            if (filtroNick.isEmpty()) {
 
+                crearJugadores();
+
+            } else {
+
+                filtroJugadores.clear();
+
+                for (Pane p : jugadores) {
+
+                    Label labelNickN = (Label) p.lookup("#labelNick");
+
+                    if (labelNickN != null && labelNickN.getText().toLowerCase().contains(filtroNick)) {
+
+                        filtroJugadores.add(p);
+                    }
+                }
+
+                flowAddAmigos.getChildren().clear();
+                flowAddAmigos.getChildren().addAll(filtroJugadores);
+
+            }
+        }
+
+    }
+
+    @FXML
+    private void MostrarJuego(MouseEvent event) {
+        ImageView ima = (ImageView) event.getSource();
+
+        switch (ima.getParent().getId()) {
+            case "Red":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+
+                scrollPane.setVisible(false);
+
+                contenedorApartados.setVisible(true);
+                M_Red.setVisible(true);
+                PanelInfo_Red.setVisible(true);
+                break;
+            case "FC":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "Hogwarts":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "Grand":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "God":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "GhostRunner":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "Fornite":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "MultiVersus":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "FallOut":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "Valorant":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "Fall":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "TheHunter":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "Genshin":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "F1":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            case "Spider":
+
+                webView.getEngine().load(null);
+                System.out.println(ima.getParent().getId());
+                break;
+            default:
+                throw new AssertionError();
         }
     }
 }

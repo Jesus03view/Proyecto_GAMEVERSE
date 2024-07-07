@@ -4,8 +4,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,9 +21,9 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="700.0" prefWidth="1300.0" stylesheets="@../Style/Styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller_View_GAME_VERSE">
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="5000.0" prefWidth="1300.0" stylesheets="@../Style/Styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller_View_GAME_VERSE">
     <children>
-        <AnchorPane layoutX="260.0" prefHeight="130.0" prefWidth="1040.0" styleClass="bacgroundNavBar" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane layoutX="259.0" prefHeight="130.0" prefWidth="1041.0" styleClass="bacgroundNavBar" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Separator layoutX="822.0" layoutY="15.0" orientation="VERTICAL" prefHeight="100.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="15.0" />
                 <Button fx:id="btn_carrito" layoutX="614.0" layoutY="40.0" mnemonicParsing="false" onAction="#ActionEvent" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="266.0">
@@ -148,14 +150,14 @@
                                         <WebView fx:id="webView" focusTraversable="false" prefHeight="440.0" prefWidth="616.0" />
                                     </children>
                                 </VBox>
-                                <Pane prefHeight="72.0" prefWidth="667.0" styleClass="bacgroundBoddy" />
+                                <Pane layoutX="3.0" prefHeight="60.0" prefWidth="661.0" style="-fx-background-color: #FFFFFF;" />
                             </children>
                         </AnchorPane>
                         <FlowPane fx:id="flowpaneGames" hgap="10.0" layoutX="67.0" layoutY="576.0" prefHeight="300.0" prefWidth="900.0" styleClass="bacgroundBoddy" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="516.0">
                             <children>
                                 <Pane fx:id="Red" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Red_Dead.png" />
                                             </image>
@@ -178,7 +180,7 @@
                                 </Pane>
                                 <Pane fx:id="FC" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_FC24.png" />
                                             </image>
@@ -198,7 +200,7 @@
                                 </Pane>
                                 <Pane fx:id="Hogwarts" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Hogwarts.png" />
                                             </image>
@@ -218,7 +220,7 @@
                                 </Pane>
                                 <Pane fx:id="Grand" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_GTA.png" />
                                             </image>
@@ -238,7 +240,7 @@
                                 </Pane>
                                 <Pane fx:id="God" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_God_Of_War.png" />
                                             </image>
@@ -258,7 +260,7 @@
                                 </Pane>
                                 <Pane fx:id="GhostRunner" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Ghost_Runner.png" />
                                             </image>
@@ -278,7 +280,7 @@
                                 </Pane>
                                 <Pane fx:id="Fornite" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Fornite.png" />
                                             </image>
@@ -298,7 +300,7 @@
                                 </Pane>
                                 <Pane fx:id="MultiVersus" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Multi_Versus.png" />
                                             </image>
@@ -318,7 +320,7 @@
                                 </Pane>
                                 <Pane fx:id="FallOut" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Fall_Out.png" />
                                             </image>
@@ -338,7 +340,7 @@
                                 </Pane>
                                 <Pane fx:id="Valorant" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Valorant.png" />
                                             </image>
@@ -358,7 +360,7 @@
                                 </Pane>
                                 <Pane fx:id="Fall" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Fall_Guys.png" />
                                             </image>
@@ -378,7 +380,7 @@
                                 </Pane>
                                 <Pane fx:id="TheHunter" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Hunter.png" />
                                             </image>
@@ -398,7 +400,7 @@
                                 </Pane>
                                 <Pane fx:id="Genshin" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Genshin.png" />
                                             </image>
@@ -418,7 +420,7 @@
                                 </Pane>
                                 <Pane fx:id="F1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_F1_24.png" />
                                             </image>
@@ -438,7 +440,7 @@
                                 </Pane>
                                 <Pane fx:id="Spider" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
                                     <children>
-                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#MostrarJuego" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../Images/Games_images/Ima_Spider_Man.png" />
                                             </image>
@@ -662,55 +664,118 @@
                 </AnchorPane>
             </content>
         </ScrollPane>
-      <ScrollPane fx:id="scrollPane_2" focusTraversable="false" hbarPolicy="NEVER" prefHeight="700.0" prefWidth="1040.0" styleClass="bacgroundBoddy" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
-         <content>
-            <AnchorPane fx:id="anchorP2" prefHeight="1200.0" prefWidth="1030.0" styleClass="bacgroundBoddy">
-               <children>
-                  <Pane fx:id="M_Red" prefHeight="1200.0" prefWidth="1030.0" />
-                  <Pane fx:id="M_FC" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_Hogwarts" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_Grand" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_God" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_GhostRunner" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_Fornite" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_MultiVersus" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_FallOut" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_Valorant" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_Fall" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_TheHunter" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_Genshin" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_F1" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-                  <Pane fx:id="M_Spider" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
-               </children>
-            </AnchorPane>
-         </content>
-      </ScrollPane>
-      <ScrollPane fx:id="scrollPaneCarrito" focusTraversable="false" hbarPolicy="NEVER" layoutX="10.0" layoutY="10.0" prefHeight="700.0" prefWidth="1040.0" styleClass="bacgroundBoddy" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
-         <content>
-            <AnchorPane fx:id="anchorP1" prefHeight="400.0" prefWidth="1030.0" styleClass="bacgroundBoddy">
-               <children>
-                  <AnchorPane layoutX="73.0" layoutY="28.0" prefHeight="442.0" prefWidth="664.0" style="-fx-border-radius: 8px;" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="30.0">
+      <HBox fx:id="contenedorApartados" prefHeight="570.0" prefWidth="1039.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
+         <children>
+            <ScrollPane fx:id="scrollPane_2" focusTraversable="false" hbarPolicy="NEVER" prefHeight="570.0" prefWidth="878.0" styleClass="bacgroundBoddy" vbarPolicy="NEVER">
+               <content>
+                  <AnchorPane fx:id="anchorP2" prefHeight="1200.0" prefWidth="1030.0" styleClass="bacgroundBoddy">
                      <children>
-                        <VBox fx:id="panePresent1" alignment="TOP_CENTER" prefHeight="440.0" prefWidth="666.0" style="-fx-border-color: #000000; -fx-border-radius: 8px;">
+                        <Pane fx:id="M_Red" prefHeight="2202.0" prefWidth="1030.0" style="-fx-background-color: whitesmoke;" visible="false">
                            <children>
-                              <WebView fx:id="webView1" focusTraversable="false" prefHeight="440.0" prefWidth="616.0" />
-                           </children>
-                        </VBox>
-                        <Pane prefHeight="72.0" prefWidth="667.0" styleClass="bacgroundBoddy" />
+                              <Label layoutX="64.0" layoutY="70.0" text="Red Dead Redemption 2">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Pane layoutX="64.0" layoutY="135.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #CACACA;" />
+                              <TextArea editable="false" focusTraversable="false" layoutX="58.0" layoutY="649.0" prefHeight="111.0" prefWidth="614.0" style="-fx-background-color: none;" text="Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas,&#10;Red Dead Redemption 2 es una historia épica sobre el honor y la lealtad en el&#10;umbral de una nueva era. &#10;Incluye Red Dead Redemption 2: Modo Historia y Red Dead Online.">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </TextArea>
+                              <TextArea editable="false" focusTraversable="false" layoutX="58.0" layoutY="869.0" prefHeight="530.0" prefWidth="616.0" style="-fx-background-color: none;" text="Incluye Red Dead Redemption 2: Modo Historia y Red Dead Online.&#10;Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas,&#10;Red Dead Redemption 2 es una historia épica sobre el honor y la lealtad&#10;en el umbral de una nueva era.&#10;&#10;América, 1899. Arthur Morgan y la banda de Van der Linde se ven obligados &#10;a huir. Con agentes federales y los mejores cazarrecompensas de la nación&#10;pisándoles los talones, la banda deberá atracar, robar y luchar, para &#10;sobrevivir en su camino por el escabroso territorio del corazón de América.&#10;Mientras las divisiones internas aumentan y amenazan con separarlos a&#10;todos, Arthur deberá elegir entre sus propios ideales y la lealtad a la banda &#10;que lo vio crecer.&#10;&#10;Red Dead Redemption 2 también incluye el mundo multijugador compartido&#10;de Red Dead Online: forja tu propio camino mientras te enfrentas a agentes&#10;de la ley, bandas de forajidos y feroces animales salvajes para ganarte la vida&#10;en la frontera americana. Monta un campamento, cabalga en solitario o forma&#10;una cuadrilla, y explora todo tipo de entornos: desde las montañas nevadas del&#10;norte hasta los pantanos del sur, pasando por puestos remotos, granjas&#10;concurridas y ciudades bulliciosas. Persigue a fugitivos; caza, pesca y&#10;comercia; busca tesoros exóticos; monta tu propia destilería de licor ilegal;&#10;o hazte Naturalista para aprender los secretos del reino animal y mucho más &#10;en un mundo increíblemente profundo y detallado. Incluye todos los nuevos&#10;contenidos, modos de juego y demás mejoras implementadas desde el lanzamiento.">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </TextArea>
+                              <TextArea editable="false" layoutX="58.0" layoutY="1486.0" prefHeight="558.0" prefWidth="616.0" style="-fx-background-color: none;" text="Mínimos                                                    Recomendado     &#10;&#10;Sistema operativo                                    Sistema operativo&#10;Windows 10: Actualización                     Windows 10: &#10;de abril de 2018 (v1803)                         Actualización de abril de 2018 (v1803)&#10;&#10;Procesador                                                Procesador&#10;Intel(R) Core(TM)                                     Intel(R) Core(TM) i7-4770K&#10;i5-2500K / AMD FX-6300                        / AMD Ryzen 5 1500x&#10;&#10;Memoria                                                    Memoria&#10;8 GB                                                           12 GB&#10;&#10;Tarjeta gráfica                                           Tarjeta gráfica&#10;NVIDIA GeForce GTX 770 de 2 GB           NVIDIA GeForce GTX 1060 de 6 GB,&#10;, AMD Radeon R9 280 de 3 GB                 AMD Radeon RX 480 de 4 GB&#10;&#10;Almacenamiento                                       Almacenamiento&#10;150 GB                                                       150 GB&#10;&#10;Otros                                                          Otros&#10;Tarjeta de sonido                                      Tarjeta de sonido compatible&#10;compatible con DirectX                            con DirectX&#10; &#10;&#10;">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </TextArea>
+                              <Text layoutX="60.0" layoutY="858.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Red Dead Redemption 2">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="60.0" layoutY="1470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Requisitos del sistema de Red Dead Redemption 2">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Text>
+                           </children></Pane>
+                        <Pane fx:id="M_FC" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_Hogwarts" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_Grand" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_God" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_GhostRunner" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_Fornite" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_MultiVersus" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_FallOut" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_Valorant" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_Fall" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_TheHunter" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_Genshin" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_F1" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
+                        <Pane fx:id="M_Spider" prefHeight="1200.0" prefWidth="1030.0" visible="false" />
                      </children>
                   </AnchorPane>
-                  <FlowPane fx:id="flowpaneGames1" hgap="10.0" layoutX="67.0" layoutY="576.0" prefHeight="300.0" prefWidth="900.0" styleClass="bacgroundBoddy" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="516.0">
+               </content>
+            </ScrollPane>
+            <Pane prefHeight="570.0" prefWidth="511.0" style="-fx-background-color: whitesmoke;">
+               <children>
+                  <Button fx:id="IrAhora" focusTraversable="false" layoutX="17.0" layoutY="345.0" mnemonicParsing="false" onAction="#ActionEvent" prefHeight="60.0" prefWidth="300.0" styleClass="btn_login" text="COMPRAR AHORA" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button focusTraversable="false" layoutX="17.0" layoutY="415.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 8px;" text="AÑADIR AL CARRITO">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button focusTraversable="false" layoutX="17.0" layoutY="485.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 8px;" text="+  A la lista de deseos">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Pane fx:id="PanelInfo_Red" layoutX="17.0" layoutY="68.0" prefHeight="268.0" prefWidth="300.0" visible="false">
                      <children>
-                        <Pane fx:id="Red1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Label layoutX="14.0" layoutY="233.0" text="COP 199,900">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="215.0" text="Juego base">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="170.0" fitWidth="300.0" layoutY="14.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Images/Games_images/Ima_Red_Dead_2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children></Pane>
+         </children>
+      </HBox>
+      <ScrollPane fx:id="scrollPaneCarrito" focusTraversable="false" hbarPolicy="NEVER" layoutX="260.0" layoutY="128.0" prefHeight="4868.0" prefWidth="705.0" styleClass="bacgroundBoddy" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
+         <content>
+            <AnchorPane fx:id="anchorP1" prefHeight="2170.0" prefWidth="1030.0" styleClass="bacgroundBoddy">
+               <children>
+                  <FlowPane fx:id="flowpaneGamesCarrito" hgap="10.0" layoutX="20.0" layoutY="200.0" prefHeight="1454.0" prefWidth="603.0" styleClass="bacgroundBoddy" vgap="10.0">
+                     <children>
+                        <Pane fx:id="Red1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Red_Dead.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="168.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $79960,00" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -719,21 +784,35 @@
                                     <Label layoutY="20.0" text="Red Dead II" />
                                  </children>
                               </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $79960,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                            <FlowPane.margin>
                               <Insets />
                            </FlowPane.margin>
                         </Pane>
-                        <Pane fx:id="FC1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="FC1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_FC24.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="169.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $67199,00" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -742,18 +821,32 @@
                                     <Label layoutY="20.0" text="FC 24" />
                                  </children>
                               </Pane>
+                              <Label layoutX="481.0" layoutY="14.0" text="COP $67199,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="Hogwarts1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="Hogwarts1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Hogwarts.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="173.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $94999,50" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -762,18 +855,32 @@
                                     <Label layoutY="20.0" text="Hogwarts Legacy" />
                                  </children>
                               </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $94999,50" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="Grand1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="Grand1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_GTA.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="169.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $47362,50" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -782,18 +889,32 @@
                                     <Label layoutY="20.0" text="Grand Theft Auto GTA" />
                                  </children>
                               </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $47362,50" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="God1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="God1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_God_Of_War.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="172.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $92000,00" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -802,18 +923,32 @@
                                     <Label layoutY="20.0" text="God Of War" />
                                  </children>
                               </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $92000,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="GhostRunner1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="GhostRunner1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Ghost_Runner.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="169.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $100000,00" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -822,16 +957,27 @@
                                     <Label layoutY="20.0" text="GhostRunner" />
                                  </children>
                               </Pane>
+                              <Label layoutX="477.0" layoutY="14.0" text="COP $100000,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos" />
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="Fornite1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="Fornite1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Fornite.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="172.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
                                     <Label id="base" text="Juego Base">
                                        <font>
@@ -839,21 +985,34 @@
                                        </font>
                                     </Label>
                                     <Label layoutY="20.0" text="Fornite" />
-                                    <Label id="gratis" alignment="CENTER" layoutY="65.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="526.0" layoutY="14.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="MultiVersus1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="MultiVersus1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Multi_Versus.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="169.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label id="gratis" alignment="CENTER" layoutY="65.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -862,18 +1021,32 @@
                                     <Label layoutY="20.0" text="MultiVersus" />
                                  </children>
                               </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="526.0" layoutY="14.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="FallOut1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="FallOut1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Fall_Out.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="198.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="170.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $79900,00" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -882,16 +1055,31 @@
                                     <Label layoutY="20.0" text="FallOut 3" />
                                  </children>
                               </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $79900,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="Valorant1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="Valorant1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Valorant.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="171.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
                                     <Label id="base" text="Juego Base">
                                        <font>
@@ -899,19 +1087,33 @@
                                        </font>
                                     </Label>
                                     <Label layoutY="20.0" text="Valorant" />
-                                    <Label id="gratis" alignment="CENTER" layoutY="65.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="526.0" layoutY="10.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="Fall1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="Fall1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Fall_Guys.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="172.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
                                     <Label id="base" text="Juego Base">
                                        <font>
@@ -919,19 +1121,33 @@
                                        </font>
                                     </Label>
                                     <Label layoutY="20.0" text="Fall Guys" />
-                                    <Label id="gratis" alignment="CENTER" layoutY="65.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="532.0" layoutY="11.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="TheHunter1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="TheHunter1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Hunter.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="168.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
                                     <Label id="base" text="Juego Base">
                                        <font>
@@ -939,19 +1155,33 @@
                                        </font>
                                     </Label>
                                     <Label layoutY="20.0" text="TheHunter" />
-                                    <Label id="gratis" alignment="CENTER" layoutY="65.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="532.0" layoutY="14.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="Genshin1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="Genshin1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Genshin.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="171.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
                                     <Label id="base" text="Juego Base">
                                        <font>
@@ -959,21 +1189,34 @@
                                        </font>
                                     </Label>
                                     <Label layoutY="20.0" text="Genshin Impact" />
-                                    <Label id="gratis" alignment="CENTER" layoutY="65.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="528.0" layoutY="17.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="F11" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="F11" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_F1_24.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="168.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $279999,00" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
@@ -982,24 +1225,53 @@
                                     <Label layoutY="20.0" text="F1 24" />
                                  </children>
                               </Pane>
+                              <Label layoutX="477.0" layoutY="10.0" text="COP $279999,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="Spider1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="180.0" styleClass="juegos">
+                        <Pane fx:id="Spider1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
                            <children>
                               <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Images/Games_images/Ima_Spider_Man.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="20.0" layoutY="200.0" prefHeight="100.0" prefWidth="140.0">
+                              <Pane layoutX="174.0" layoutY="12.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Label layoutY="65.0" text="COP $184000,00" />
                                     <Label id="base" text="Juego Base">
                                        <font>
                                           <Font name="System Bold" size="10.0" />
                                        </font>
                                     </Label>
                                     <Label layoutY="20.0" text="Spider Man" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="477.0" layoutY="14.0" text="COP $184000,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Mover a lista de deseos">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </Pane>
                            </children>
@@ -1009,201 +1281,601 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </FlowPane>
-                  <Pane layoutX="754.0" layoutY="30.0" prefHeight="441.0" prefWidth="215.0" styleClass="bacgroundBoddy" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="30.0">
+                  <Label layoutX="24.0" layoutY="102.0" text="Mi carrito">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="661.0" layoutY="207.0" prefHeight="311.0" prefWidth="280.0" style="-fx-border-color: #000000; -fx-border-radius: 8;">
                      <children>
-                        <ScrollPane focusTraversable="false" hbarPolicy="NEVER" layoutX="2.0" layoutY="34.0" prefHeight="406.0" prefWidth="212.0" styleClass="track" vbarPolicy="NEVER">
-                           <content>
-                              <FlowPane fx:id="flowRelacionado1" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="20.0" prefHeight="957.0" prefWidth="213.0" prefWrapLength="600.0" rowValignment="TOP" styleClass="bacgroundBoddy" vgap="20.0">
+                        <Label layoutX="14.0" layoutY="14.0" text="Resumen de juegos ">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="64.0" text="Precio:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="74.0" layoutY="64.0" text="COP 000000,00">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="174.0" text="SubTotal:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="92.0" layoutY="174.0" text="COP 000000,00">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btn_IrComrprar" layoutX="24.0" layoutY="223.0" mnemonicParsing="false" onAction="#ActionEvent" prefHeight="72.0" prefWidth="230.0" styleClass="btn_login" text="Ir a la pantalla de compra" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Separator layoutX="21.0" layoutY="162.0" prefHeight="3.0" prefWidth="230.0" style="-fx-background-color: #000000;" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="scrollPaneListaD" focusTraversable="false" hbarPolicy="NEVER" layoutX="270.0" layoutY="138.0" prefHeight="4868.0" prefWidth="705.0" styleClass="bacgroundBoddy" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
+         <content>
+            <AnchorPane fx:id="anchorP3" prefHeight="3360.0" prefWidth="1030.0" styleClass="bacgroundBoddy">
+               <children>
+                  <FlowPane fx:id="flowpaneGamesListaD" hgap="10.0" layoutX="20.0" layoutY="200.0" prefHeight="1454.0" prefWidth="603.0" styleClass="bacgroundBoddy" vgap="10.0">
+                     <children>
+                        <Pane fx:id="Red" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Red_Dead.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="168.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
                                  <children>
-                                    <Button fx:id="btn_game11" graphicTextGap="60.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="F1  24">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_F1_24.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Red Dead II" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $79960,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="btn_game21" graphicTextGap="45.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="Fall Guys">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Fall_Guys.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
                                        <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game31" graphicTextGap="60.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="Fallout">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Fall_Out.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game41" graphicTextGap="60.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="FC 24">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_FC24.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game51" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="God Of War">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_God_Of_War.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game61" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="MultiVersus">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Multi_Versus.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game71" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="Genshin      ">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Genshin.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game81" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="GhostRuner">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Ghost_Runner.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game91" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="Fornite       ">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Fornite.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game101" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="Spider Man">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Spider_Man.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game111" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="Red Dead ">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Red_Dead.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game121" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="The Hunter">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Hunter.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game131" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="GTA Theft ">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_GTA.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game141" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="Hogwarts">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Hogwarts.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="btn_game151" graphicTextGap="25.0" mnemonicParsing="false" onAction="#EventAction2" prefHeight="80.0" prefWidth="200.0" styleClass="btn_Relacionado" text="Valorant">
-                                       <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../Images/Games_images/Ima_Valorant.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Button>
                                  </children>
-                              </FlowPane>
-                           </content>
-                        </ScrollPane>
-                        <Text layoutX="53.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relacionado:">
+                              </Pane>
+                           </children>
+                           <FlowPane.margin>
+                              <Insets />
+                           </FlowPane.margin>
+                        </Pane>
+                        <Pane fx:id="FC" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_FC24.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="169.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="FC 24" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="481.0" layoutY="14.0" text="COP $67199,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="Hogwarts" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Hogwarts.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="173.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Hogwarts Legacy" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $94999,50" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="Grand" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_GTA.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="169.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Grand Theft Auto GTA" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $47362,50" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="God" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_God_Of_War.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="172.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="God Of War" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $92000,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="GhostRunner" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Ghost_Runner.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="169.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="GhostRunner" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="477.0" layoutY="14.0" text="COP $100000,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="Fornite" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Fornite.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="172.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Fornite" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="526.0" layoutY="14.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="MultiVersus" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Multi_Versus.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="169.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="MultiVersus" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="526.0" layoutY="14.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="FallOut" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Fall_Out.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="170.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="FallOut 3" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="485.0" layoutY="14.0" text="COP $79900,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="Valorant" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Valorant.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="171.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Valorant" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="526.0" layoutY="10.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="Fall" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Fall_Guys.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="172.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Fall Guys" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="532.0" layoutY="11.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="TheHunter" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Hunter.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="168.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="TheHunter" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="532.0" layoutY="14.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="Genshin" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Genshin.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="171.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Genshin Impact" />
+                                 </children>
+                              </Pane>
+                              <Label id="gratis" alignment="CENTER" layoutX="528.0" layoutY="17.0" prefHeight="20.0" prefWidth="60.0" text="Gratis" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="F1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_F1_24.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="168.0" layoutY="14.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="F1 24" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="477.0" layoutY="10.0" text="COP $279999,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="Spider" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #AFCDD3;" styleClass="juegos">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="140.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Games_images/Ima_Spider_Man.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="174.0" layoutY="12.0" prefHeight="100.0" prefWidth="140.0">
+                                 <children>
+                                    <Label id="base" text="Juego Base">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="20.0" text="Spider Man" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="477.0" layoutY="14.0" text="COP $184000,00" />
+                              <Pane layoutX="320.0" layoutY="115.0" prefHeight="72.0" prefWidth="266.0">
+                                 <children>
+                                    <Button layoutX="112.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-border-radius: 5;" text="Agregar  al carrito">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="27.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: none;" text="Eliminar" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </FlowPane>
+                  <Label layoutX="24.0" layoutY="102.0" text="Lista De Deseos">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="661.0" layoutY="207.0" prefHeight="311.0" prefWidth="280.0" style="-fx-border-color: #000000; -fx-border-radius: 8;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Filtro">
                            <font>
-                              <Font name="System Bold" size="18.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
-                        </Text>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="64.0" text="Todo">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="107.0" text="Acción">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="147.0" text="Aventura">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                </children>
@@ -1351,7 +2023,7 @@
                         </Pane>
                         <ScrollPane hbarPolicy="NEVER" layoutX="15.0" layoutY="99.0" prefHeight="258.0" prefWidth="266.0" style="-fx-background-color: #AFCDD3;" vbarPolicy="NEVER">
                             <content>
-                                <FlowPane prefHeight="262.0" prefWidth="265.0" style="-fx-background-color: #AFCDD3;" />
+                                <FlowPane fx:id="FlowAcomprar" prefHeight="262.0" prefWidth="265.0" style="-fx-background-color: #AFCDD3;" />
                             </content>
                         </ScrollPane>
                         <Separator focusTraversable="false" layoutX="15.0" layoutY="405.0" prefHeight="0.0" prefWidth="291.0" style="-fx-background-color: #000000;" />
@@ -1501,5 +2173,74 @@
                 </Pane>
             </children>
         </AnchorPane>
+      <Pane fx:id="Panel_Cambiar_Clave" prefHeight="350.0" prefWidth="500.0" style="-fx-background-radius: 8px; -fx-border-color: #FFFFFF; -fx-border-width: 1.5; -fx-border-radius: 8px;" styleClass="bacgroundNavBar" visible="false" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <ImageView fitHeight="311.0" fitWidth="460.0" layoutX="19.0" layoutY="22.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Fondo_CambioClave.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="17.0" layoutY="22.0" prefHeight="317.0" prefWidth="45.0" styleClass="bacgroundNavBar" />
+            <Pane layoutX="27.0" layoutY="2.0" prefHeight="45.0" prefWidth="465.0" styleClass="bacgroundNavBar" />
+            <Pane layoutX="55.0" layoutY="287.0" prefHeight="30.0" prefWidth="430.0" styleClass="bacgroundNavBar" />
+            <Pane layoutX="450.0" layoutY="2.0" prefHeight="340.0" prefWidth="45.0" styleClass="bacgroundNavBar">
+               <children>
+                  <Pane layoutX="-194.0" layoutY="-3.0" prefHeight="45.0" prefWidth="465.0" styleClass="bacgroundNavBar" visible="false" />
+                  <Button fx:id="btn_CERRAR" layoutX="17.0" layoutY="4.0" mnemonicParsing="false" onAction="#ActionEvent" style="-fx-background-color: red;" text="X" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="PanelValidacion" layoutX="137.0" layoutY="95.0" prefHeight="111.0" prefWidth="240.0" style="-fx-background-radius: 8px;" styleClass="bacgroundNavBar">
+               <children>
+                  <TextField fx:id="txt_NewNickName" layoutX="82.0" layoutY="12.0" promptText="NickName" />
+                  <Label layoutX="2.0" layoutY="14.0" text="NickName:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="7.0" layoutY="48.0" text="Password:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_ValidarClave" layoutX="172.0" layoutY="78.0" mnemonicParsing="false" onAction="#ActionEvent" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #23544D; -fx-border-width: 2; -fx-background-radius: 5px;" text="Validar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="txt_VPassWord" layoutX="82.0" layoutY="46.0" promptText="********" />
+               </children>
+            </Pane>
+            <Pane fx:id="PanelCambiar" layoutX="137.0" layoutY="95.0" prefHeight="111.0" prefWidth="240.0" style="-fx-background-radius: 8px;" styleClass="bacgroundNavBar" visible="false">
+               <children>
+                  <TextField fx:id="txt_NewPassword" layoutX="86.0" layoutY="12.0" promptText="********" />
+                  <Label layoutX="2.0" layoutY="14.0" text="NewPassword:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1.0" layoutY="48.0" text="V. Password:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_AceptarCalve" layoutX="168.0" layoutY="78.0" mnemonicParsing="false" onAction="#ActionEvent" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #23544D; -fx-border-width: 2; -fx-background-radius: 5px;" text="Aceptar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="txt_VNewPassword" layoutX="86.0" layoutY="46.0" promptText="********" />
+               </children>
+            </Pane>
+            <Text fx:id="txt_Texto" fill="WHITE" layoutX="63.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hola NickName, aquí puedes cambiar tu clave :)" wrappingWidth="345.6614990234375">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
     </children>
 </AnchorPane>

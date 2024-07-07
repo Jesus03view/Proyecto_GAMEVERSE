@@ -19,7 +19,7 @@
    <children>
       <Pane prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Pane layoutY="620.0" prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #238F8D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Pane layoutX="450.0" layoutY="80.0" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: 238F8D;" stylesheets="@../Style/Styles.css" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="80.0">
+      <Pane layoutX="450.0" layoutY="80.0" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: none;" stylesheets="@../Style/Styles.css" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="80.0">
          <children>
             <ImageView fitHeight="150.0" fitWidth="300.0" layoutX="100.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>

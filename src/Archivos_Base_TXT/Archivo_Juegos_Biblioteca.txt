@@ -1,5 +1,4 @@
 NickName, Fall Guys, /Images/Games_images/Ima_Fall_Guys.png
-NickName, Red Dead, /Images/Games_images/Ima_Red_Dead.png
 NickName, Hogwarts legacy, /Images/Games_images/Ima_Hogwarts.png
 NickName, GTA Grand Theft Auto V, /Images/Games_images/Ima_GTA.png
 NickName, Fornite, /Images/Games_images/Ima_Fornite.png

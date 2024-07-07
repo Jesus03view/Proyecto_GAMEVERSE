@@ -97,7 +97,7 @@ public class ListaDobleUsuario {
             actual = actual.getSig();
 
         } while (actual != null && actual != cabU);
-        
+
         return todos;
     }
 
@@ -164,6 +164,35 @@ public class ListaDobleUsuario {
         }
     }
 
+    public boolean eliminarUsuario(String nickName) {
+        if (cabU == null) {
+            return false;
+        }
+
+        Nodo_Usuario actual = cabU;
+        while (actual != null) {
+            if (actual.getNombreJugador().equals(nickName)) {
+                if (actual == cabU) {
+
+                    cabU = actual.getSig();
+                    if (cabU != null) {
+                        cabU.setAnt(null);
+                    }
+                } else {
+
+                    actual.getAnt().setSig(actual.getSig());
+                    if (actual.getSig() != null) {
+                        actual.getSig().setAnt(actual.getAnt());
+                    }
+                }
+                return true;
+            }
+            actual = actual.getSig();
+        }
+
+        return false;
+    }
+
     public void addUsuarioInicio(TextField txtNombre, TextField txtIden, TextField txtCell, TextField txtGmail, TextField txtNickName, PasswordField txtPassword) {
 
         Nodo_Usuario ch = getCrearUsuario(txtNombre, txtIden, txtCell, txtGmail, txtNickName, txtPassword);
@@ -197,8 +226,13 @@ public class ListaDobleUsuario {
                 writer.write(nodoActual.getCelular() + ", ");
                 writer.write(nodoActual.getCorreo() + ", ");
                 writer.write(nodoActual.getNombreJugador() + ", ");
-                writer.write(nodoActual.getClave());
-                writer.write(nodoActual.getAmigos());
+                writer.write(nodoActual.getClave() + ", ");
+                if (nodoActual.getAmigos().isEmpty()) {
+                    writer.write(". " + nodoActual.getAmigos());
+                } else {
+                    writer.write(nodoActual.getAmigos());
+                }
+
                 writer.newLine();
 
                 nodoActual = nodoActual.getSig();

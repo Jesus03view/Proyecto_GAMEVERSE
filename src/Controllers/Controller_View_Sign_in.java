@@ -7,6 +7,7 @@ import Models.Nodos.Nodo_Juego;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -25,6 +26,7 @@ public class Controller_View_Sign_in implements Initializable {
 
     private ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
     private PilaStack_Juego pilaJ = ModeloDeDatos.obtenerInstancia().getPilaJ();
+    
     @FXML
     private TextField txt_Nombre;
     @FXML
@@ -50,6 +52,7 @@ public class Controller_View_Sign_in implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO        
+        pilaJ.cargarJuegos();
     }
 
     public void closeWindow() {
@@ -115,13 +118,7 @@ public class Controller_View_Sign_in implements Initializable {
                                 if (txtPassword_1.getText().equals(txtPassword_2.getText())) {
 
                                     listU.addUsuarioInicio(txtNombre, txtIden, txtCell, txtGmail, txtNickName, txtPassword_1);
-                                    listU.guardarDatosEnArchivoUsuarios(listU);
-                                    Nodo_Juego juego = new Nodo_Juego();
-                                    juego.setNickUser(txtNickName.getText());
-                                    juego.setNombre("NULL");
-                                    juego.setURL_ima("NULL");
-                                    pilaJ.setPushJuego(juego);
-                                    pilaJ.guardarJuegos(pilaJ.getPilaJB());
+                                    listU.guardarDatosEnArchivoUsuarios(listU);                                    
                                     if (listU.getnUsuarios() != 0) {
                                         txtPassword_2.setText("");
                                         closeWindow();
@@ -165,25 +162,4 @@ public class Controller_View_Sign_in implements Initializable {
             a.showAndWait();
         }
     }
-
-    public void closeWindows() {
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/View_Login.fxml"));
-
-            Parent roott = loader.load();
-
-            Scene scene = new Scene(roott);
-            Stage stage = new Stage();
-
-            stage.setScene(scene);
-            stage.show();
-
-            Stage miStage = (Stage) this.btn_aceptar.getScene().getWindow();
-            miStage.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Controller_View_Sign_in.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
 }
