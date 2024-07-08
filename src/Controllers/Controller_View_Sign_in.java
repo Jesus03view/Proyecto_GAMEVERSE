@@ -7,9 +7,10 @@ import Models.Nodos.Nodo_Juego;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +27,7 @@ public class Controller_View_Sign_in implements Initializable {
 
     private ListaDobleUsuario listU = ModeloDeDatos.obtenerInstancia().getListaU();
     private PilaStack_Juego pilaJ = ModeloDeDatos.obtenerInstancia().getPilaJ();
-    
+
     @FXML
     private TextField txt_Nombre;
     @FXML
@@ -116,14 +117,42 @@ public class Controller_View_Sign_in implements Initializable {
                             if (!"".equals(txtPassword_1.getText())) {
 
                                 if (txtPassword_1.getText().equals(txtPassword_2.getText())) {
+                                    
+                                    Nodo_Juego j1 = new Nodo_Juego(txtNickName.getText(), "Red Dead", "/Images/Games_images/Ima_Red_Dead.png");
+                                    Nodo_Juego j2 = new Nodo_Juego(txtNickName.getText(), "Fall Guys", "/Images/Games_images/Ima_Fall_Guys.png");
+                                    Nodo_Juego j3 = new Nodo_Juego(txtNickName.getText(), "Hogwarts legacy", "/Images/Games_images/Ima_Hogwarts.png");
+                                    Nodo_Juego j4 = new Nodo_Juego(txtNickName.getText(), "Grand Theft Auto V", "/Images/Games_images/Ima_GTA.png");
+                                    Nodo_Juego j5 = new Nodo_Juego(txtNickName.getText(), "Fornite", "/Images/Games_images/Ima_Fornite.png");
+                                    Nodo_Juego j6 = new Nodo_Juego(txtNickName.getText(), "MultiVersus", "/Images/Games_images/Ima_Multi_Versus.png");
+                                    Nodo_Juego j7 = new Nodo_Juego(txtNickName.getText(), "God Of War", "/Images/Games_images/Ima_God_Of_War.png");
+                                    Nodo_Juego j8 = new Nodo_Juego(txtNickName.getText(), "FC 24", "/Images/Games_images/Ima_FC24.png");
+                                    Nodo_Juego j9 = new Nodo_Juego(txtNickName.getText(), "GhostRunner", "/Images/Games_images/Ima_Ghost_Runner.png");
+                                    Nodo_Juego j10 = new Nodo_Juego(txtNickName.getText(), "FallOut", "/Images/Games_images/Ima_Fall_Out.png");
+                                    Nodo_Juego j11 = new Nodo_Juego(txtNickName.getText(), "Valorant", "/Images/Games_images/Ima_Valorant.png");
+                                    Nodo_Juego j12 = new Nodo_Juego(txtNickName.getText(), "TheHunter", "/Images/Games_images/Ima_Hunter.png");
+                                    Nodo_Juego j13 = new Nodo_Juego(txtNickName.getText(), "Genshin", "/Images/Games_images/Ima_Genshin.png");
+                                    Nodo_Juego j14 = new Nodo_Juego(txtNickName.getText(), "F1 24", "/Images/Games_images/ma_F1_24.png");
+                                    Nodo_Juego j15 = new Nodo_Juego(txtNickName.getText(), "Spider", "/Images/Games_images/Ima_Spider_Man.png");
 
                                     listU.addUsuarioInicio(txtNombre, txtIden, txtCell, txtGmail, txtNickName, txtPassword_1);
-                                    listU.guardarDatosEnArchivoUsuarios(listU);                                    
+                                    listU.guardarDatosEnArchivoUsuarios(listU);
+                                    
+                                    ObservableList<Nodo_Juego> juegos = FXCollections.observableArrayList();
+                                    juegos.addAll(j1, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15);
+
+                                    for (Nodo_Juego juego : juegos) {
+                                        pilaJ.setPushJuego2(juego);
+                                        pilaJ.setPushJuego3(juego);
+                                    }
+
+                                    pilaJ.guardarJuegos2(pilaJ.getClonarJL());
+                                    pilaJ.guardarJuegos3(pilaJ.getClonarJC());
+
                                     if (listU.getnUsuarios() != 0) {
                                         txtPassword_2.setText("");
                                         closeWindow();
                                     }
-                                    
+
                                 } else {
                                     a.setContentText("Verifique su contraseña");
                                     a.showAndWait();

@@ -117,6 +117,12 @@ public class PilaStack_Juego {
         }
     }
 
+    public boolean limpiar2() {
+        pilaJL.clear();
+
+        return pilaJL.isEmpty();
+    }
+    
     public Stack<Nodo_Juego> getJuegosNick2(String NickUser) {
         Stack<Nodo_Juego> pila = new Stack<>();
         for (Nodo_Juego aux : pilaJL) {
@@ -165,12 +171,14 @@ public class PilaStack_Juego {
         }
     }
 
-    public void eliminar2(Stack<Nodo_Juego> pila, String Nick, String NombreJuego) {
+    public void eliminar2(Stack<Nodo_Juego> pila, String nombre, String nick) {
         Stack<Nodo_Juego> temp = new Stack<>();
-        String[] primero = NombreJuego.split(" ");
+
         while (!pila.isEmpty()) {
             Nodo_Juego juego = pila.pop();
-            if (juego.getNickUser().equals(Nick) && juego.getNombre().equals(primero[0])) {
+            String[] nom = juego.getNombre().split(" ");
+            String[] nic = juego.getNickUser().split(" ");
+            if (!nom[0].equals(nombre) || !nic[0].equals(nick)) {
                 temp.push(juego);
             }
         }
@@ -187,6 +195,12 @@ public class PilaStack_Juego {
         } else {
             System.out.println("Ya se encontraba registrado el producto");
         }
+    }
+
+    public boolean limpiar3() {
+        pilaJC.clear();
+
+        return pilaJC.isEmpty();
     }
 
     public Stack<Nodo_Juego> getJuegosNick3(String NickUser) {
@@ -237,12 +251,14 @@ public class PilaStack_Juego {
         }
     }
 
-    public void eliminar3(Stack<Nodo_Juego> pila, String Nick) {
+    public void eliminar3(Stack<Nodo_Juego> pila, String nombre, String nick) {
         Stack<Nodo_Juego> temp = new Stack<>();
 
         while (!pila.isEmpty()) {
             Nodo_Juego juego = pila.pop();
-            if (juego.getNickUser().equals(Nick)) {
+            String[] nom = juego.getNombre().split(" ");
+            String[] nic = juego.getNickUser().split(" ");
+            if (!nom[0].equals(nombre) || !nic[0].equals(nick)) {
                 temp.push(juego);
             }
         }
@@ -253,7 +269,7 @@ public class PilaStack_Juego {
 
     public void guardarJuegos(Stack<Nodo_Juego> pila) {
 
-        String direccion = System.getProperty("user.dir") + "\\src\\ArchivosBase_TXT\\Archivo_Juegos_Biblioteca.txt";
+        String direccion = System.getProperty("user.dir") + "\\src\\Archivos_Base_TXT\\Archivo_Juegos_Biblioteca.txt";
 
         Path archivo = Paths.get(direccion);
 
@@ -306,7 +322,7 @@ public class PilaStack_Juego {
 
     public void guardarJuegos2(Stack<Nodo_Juego> pila) {
 
-        String direccion = System.getProperty("user.dir") + "\\src\\ArchivosBase_TXT\\Archivo_Juegos_LDeseos.txt";
+        String direccion = System.getProperty("user.dir") + "\\src\\Archivos_Base_TXT\\Archivo_Juegos_LDeseos.txt";
 
         Path archivo = Paths.get(direccion);
 
@@ -354,6 +370,59 @@ public class PilaStack_Juego {
             System.out.println("Datos cargados correctamente desde Archivo_Juegos_LDeseos.txt.");
         } catch (IOException e) {
             System.out.println("Error al cargar los datos desde Archivo_Juegos_LDeseos.txt: " + e.getMessage());
+        }
+    }
+
+    public void guardarJuegos3(Stack<Nodo_Juego> pila) {
+
+        String direccion = System.getProperty("user.dir") + "\\src\\Archivos_Base_TXT\\Archivo_Juegos_Carrito.txt";
+
+        Path archivo = Paths.get(direccion);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo.toFile(), false))) {
+            Stack<Nodo_Juego> proAux = pila;
+
+            for (Nodo_Juego juego : proAux) {
+                writer.write(juego.getNickUser() + ", ");
+                writer.write(juego.getNombre() + ", ");
+                writer.write(juego.getURL_ima());
+                writer.newLine();
+            }
+
+            System.out.println("Datos guardados correctamente en: Archivo_Juegos_Carrito.txt.");
+        } catch (IOException e) {
+            System.out.println("Error al guardar los datos en: Archivo_Juegos_Carrito.txt: " + e.getMessage());
+        }
+    }
+
+    public void cargarJuegos3() {
+
+        String direccion = System.getProperty("user.dir") + "\\src\\Archivos_Base_TXT\\Archivo_Juegos_Carrito.txt";
+
+        Path archivo = Paths.get(direccion);
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivo.toFile()))) {
+
+            String linea;
+            if (!pilaJC.isEmpty()) {
+                pilaJC.clear();
+            }
+            while ((linea = reader.readLine()) != null) {
+
+                String[] atributos = linea.split(", ");
+
+                String NickUser = atributos[0];
+                String nombre = atributos[1];
+                String URL = atributos[2];
+
+                Nodo_Juego juego = new Nodo_Juego(NickUser, nombre, URL);
+
+                setPushJuego3(juego);
+            }
+
+            System.out.println("Datos cargados correctamente desde Archivo_Juegos_Carrito.txt.");
+        } catch (IOException e) {
+            System.out.println("Error al cargar los datos desde Archivo_Juegos_Carrito.txt: " + e.getMessage());
         }
     }
 }

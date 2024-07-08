@@ -1,6 +1,90 @@
-NickName, Fall Guys, /Images/Games_images/Ima_Fall_Guys.png
 NickName, Red Dead, /Images/Games_images/Ima_Red_Dead.png
+NickName, Fall Guys, /Images/Games_images/Ima_Fall_Guys.png
 NickName, Hogwarts legacy, /Images/Games_images/Ima_Hogwarts.png
 NickName, Grand Theft Auto V, /Images/Games_images/Ima_GTA.png
 NickName, Fornite, /Images/Games_images/Ima_Fornite.png
+NickName, MultiVersus, /Images/Games_images/Ima_Multi_Versus.png
 NickName, God Of War, /Images/Games_images/Ima_God_Of_War.png
+NickName, FC 24, /Images/Games_images/Ima_FC24.png
+NickName, GhostRunner, /Images/Games_images/Ima_Ghost_Runner.png
+NickName, FallOut, /Images/Games_images/Ima_Fall_Out.png
+NickName, Valorant, /Images/Games_images/Ima_Valorant.png
+NickName, TheHunter, /Images/Games_images/Ima_Hunter.png
+NickName, Genshin, /Images/Games_images/Ima_Genshin.png
+NickName, F1 24, /Images/Games_images/ma_F1_24.png
+NickName, Spider, /Images/Games_images/Ima_Spider_Man.png
+Prueba1, Red Dead, /Images/Games_images/Ima_Red_Dead.png
+Prueba1, Fall Guys, /Images/Games_images/Ima_Fall_Guys.png
+Prueba1, Hogwarts legacy, /Images/Games_images/Ima_Hogwarts.png
+Prueba1, Grand Theft Auto V, /Images/Games_images/Ima_GTA.png
+Prueba1, Fornite, /Images/Games_images/Ima_Fornite.png
+Prueba1, MultiVersus, /Images/Games_images/Ima_Multi_Versus.png
+Prueba1, God Of War, /Images/Games_images/Ima_God_Of_War.png
+Prueba1, FC 24, /Images/Games_images/Ima_FC24.png
+Prueba1, GhostRunner, /Images/Games_images/Ima_Ghost_Runner.png
+Prueba1, FallOut, /Images/Games_images/Ima_Fall_Out.png
+Prueba1, Valorant, /Images/Games_images/Ima_Valorant.png
+Prueba1, TheHunter, /Images/Games_images/Ima_Hunter.png
+Prueba1, Genshin, /Images/Games_images/Ima_Genshin.png
+Prueba1, F1 24, /Images/Games_images/ma_F1_24.png
+Prueba1, Spider, /Images/Games_images/Ima_Spider_Man.png
+Prueba2, Red Dead, /Images/Games_images/Ima_Red_Dead.png
+Prueba2, Fall Guys, /Images/Games_images/Ima_Fall_Guys.png
+Prueba2, Hogwarts legacy, /Images/Games_images/Ima_Hogwarts.png
+Prueba2, Grand Theft Auto V, /Images/Games_images/Ima_GTA.png
+Prueba2, Fornite, /Images/Games_images/Ima_Fornite.png
+Prueba2, MultiVersus, /Images/Games_images/Ima_Multi_Versus.png
+Prueba2, God Of War, /Images/Games_images/Ima_God_Of_War.png
+Prueba2, FC 24, /Images/Games_images/Ima_FC24.png
+Prueba2, GhostRunner, /Images/Games_images/Ima_Ghost_Runner.png
+Prueba2, FallOut, /Images/Games_images/Ima_Fall_Out.png
+Prueba2, Valorant, /Images/Games_images/Ima_Valorant.png
+Prueba2, TheHunter, /Images/Games_images/Ima_Hunter.png
+Prueba2, Genshin, /Images/Games_images/Ima_Genshin.png
+Prueba2, F1 24, /Images/Games_images/ma_F1_24.png
+Prueba2, Spider, /Images/Games_images/Ima_Spider_Man.png
+Prueba3, Red Dead, /Images/Games_images/Ima_Red_Dead.png
+Prueba3, Fall Guys, /Images/Games_images/Ima_Fall_Guys.png
+Prueba3, Hogwarts legacy, /Images/Games_images/Ima_Hogwarts.png
+Prueba3, Grand Theft Auto V, /Images/Games_images/Ima_GTA.png
+Prueba3, Fornite, /Images/Games_images/Ima_Fornite.png
+Prueba3, MultiVersus, /Images/Games_images/Ima_Multi_Versus.png
+Prueba3, God Of War, /Images/Games_images/Ima_God_Of_War.png
+Prueba3, FC 24, /Images/Games_images/Ima_FC24.png
+Prueba3, GhostRunner, /Images/Games_images/Ima_Ghost_Runner.png
+Prueba3, FallOut, /Images/Games_images/Ima_Fall_Out.png
+Prueba3, Valorant, /Images/Games_images/Ima_Valorant.png
+Prueba3, TheHunter, /Images/Games_images/Ima_Hunter.png
+Prueba3, Genshin, /Images/Games_images/Ima_Genshin.png
+Prueba3, F1 24, /Images/Games_images/ma_F1_24.png
+Prueba3, Spider, /Images/Games_images/Ima_Spider_Man.png
+Prueba4, Red Dead, /Images/Games_images/Ima_Red_Dead.png
+Prueba4, Fall Guys, /Images/Games_images/Ima_Fall_Guys.png
+Prueba4, Hogwarts legacy, /Images/Games_images/Ima_Hogwarts.png
+Prueba4, Grand Theft Auto V, /Images/Games_images/Ima_GTA.png
+Prueba4, Fornite, /Images/Games_images/Ima_Fornite.png
+Prueba4, MultiVersus, /Images/Games_images/Ima_Multi_Versus.png
+Prueba4, God Of War, /Images/Games_images/Ima_God_Of_War.png
+Prueba4, FC 24, /Images/Games_images/Ima_FC24.png
+Prueba4, GhostRunner, /Images/Games_images/Ima_Ghost_Runner.png
+Prueba4, FallOut, /Images/Games_images/Ima_Fall_Out.png
+Prueba4, Valorant, /Images/Games_images/Ima_Valorant.png
+Prueba4, TheHunter, /Images/Games_images/Ima_Hunter.png
+Prueba4, Genshin, /Images/Games_images/Ima_Genshin.png
+Prueba4, F1 24, /Images/Games_images/ma_F1_24.png
+Prueba4, Spider, /Images/Games_images/Ima_Spider_Man.png
+Prueba5, Red Dead, /Images/Games_images/Ima_Red_Dead.png
+Prueba5, Fall Guys, /Images/Games_images/Ima_Fall_Guys.png
+Prueba5, Hogwarts legacy, /Images/Games_images/Ima_Hogwarts.png
+Prueba5, Grand Theft Auto V, /Images/Games_images/Ima_GTA.png
+Prueba5, Fornite, /Images/Games_images/Ima_Fornite.png
+Prueba5, MultiVersus, /Images/Games_images/Ima_Multi_Versus.png
+Prueba5, God Of War, /Images/Games_images/Ima_God_Of_War.png
+Prueba5, FC 24, /Images/Games_images/Ima_FC24.png
+Prueba5, GhostRunner, /Images/Games_images/Ima_Ghost_Runner.png
+Prueba5, FallOut, /Images/Games_images/Ima_Fall_Out.png
+Prueba5, Valorant, /Images/Games_images/Ima_Valorant.png
+Prueba5, TheHunter, /Images/Games_images/Ima_Hunter.png
+Prueba5, Genshin, /Images/Games_images/Ima_Genshin.png
+Prueba5, F1 24, /Images/Games_images/ma_F1_24.png
+Prueba5, Spider, /Images/Games_images/Ima_Spider_Man.png

@@ -4,10 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Controllers/Controller_View_GAME_VERSE.java</file>
-            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Archivos_Base_TXT/Archivo_Juegos_Biblioteca.txt</file>
-            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Models/EstructurasDeDatos/ListaDobleUsuario.java</file>
+            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Models/Nodos/Nodo_Juego.java</file>
             <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Archivos_Base_TXT/Archivo_Juegos_LDeseos.txt</file>
-            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Archivos_Base_TXT/Archivo_Usuarios.txt</file>
+            <file>file:/C:/Users/Nubiaa/OneDrive/Documentos/NetBeansProjects/Proyecto_GAMEVERSE-main/src/Models/EstructurasDeDatos/PilaStack_Juego.java</file>
         </group>
     </open-files>
 </project-private>

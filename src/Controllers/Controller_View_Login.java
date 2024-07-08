@@ -47,6 +47,8 @@ public class Controller_View_Login implements Initializable {
         // TODO
         listU.cargarDatosDesdeArchivoUsuarios();
         pilaJ.cargarJuegos();
+        pilaJ.cargarJuegos2();
+        pilaJ.cargarJuegos3();
     }
 
     @FXML

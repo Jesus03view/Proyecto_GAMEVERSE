@@ -235,36 +235,6 @@ public class Controller_View_GAME_VERSE implements Initializable {
     @FXML
     private AnchorPane anchorP1;
     @FXML
-    private Pane Red1;
-    @FXML
-    private Pane FC1;
-    @FXML
-    private Pane Hogwarts1;
-    @FXML
-    private Pane Grand1;
-    @FXML
-    private Pane God1;
-    @FXML
-    private Pane GhostRunner1;
-    @FXML
-    private Pane Fornite1;
-    @FXML
-    private Pane MultiVersus1;
-    @FXML
-    private Pane FallOut1;
-    @FXML
-    private Pane Valorant1;
-    @FXML
-    private Pane Fall1;
-    @FXML
-    private Pane TheHunter1;
-    @FXML
-    private Pane Genshin1;
-    @FXML
-    private Pane F11;
-    @FXML
-    private Pane Spider1;
-    @FXML
     private Pane Panel_Cambiar_Clave;
     @FXML
     private Pane PanelValidacion;
@@ -304,6 +274,24 @@ public class Controller_View_GAME_VERSE implements Initializable {
     private Pane PanelInfo_Red;
     @FXML
     private FlowPane FlowAcomprar;
+    @FXML
+    private Label txtPrecioPagar;
+    @FXML
+    private Label txtTotalPagar;
+    @FXML
+    private TextField txtMetodoNequi;
+    @FXML
+    private TextField txtMetodoTarjeta;
+    @FXML
+    private TextField txtMetodoDaviPlata;
+    @FXML
+    private Pane unicoAcomprar;
+    @FXML
+    private ScrollPane scrollPaneBiblioteca;
+    @FXML
+    private AnchorPane anchorP4;
+    @FXML
+    private FlowPane flowpaneGamesBiblioteca;
 
     /**
      * Initializes the controller class.
@@ -329,10 +317,16 @@ public class Controller_View_GAME_VERSE implements Initializable {
         flowpaneGamesCarrito.prefWidthProperty().bind(anchorP1.widthProperty());
         flowpaneGamesCarrito.prefHeightProperty().bind(anchorP1.heightProperty());
 
+        anchorP4.prefWidthProperty().bind(scrollPaneBiblioteca.widthProperty());
+        anchorP4.prefHeightProperty().bind(scrollPaneBiblioteca.heightProperty());
+        flowpaneGamesBiblioteca.prefWidthProperty().bind(anchorP4.widthProperty());
+        flowpaneGamesBiblioteca.prefHeightProperty().bind(anchorP4.heightProperty());
+
         listU.cargarDatosDesdeArchivoUsuarios();
 
         pila.cargarJuegos();
         pila.cargarJuegos2();
+        pila.cargarJuegos3();
     }
 
     public Label getTxt_btn_P() {
@@ -616,32 +610,60 @@ public class Controller_View_GAME_VERSE implements Initializable {
             PanelAddAmigos.setVisible(true);
             crearJugadores();
         } else if (e.getSource().equals(btn_Shop)) {
-
-            mostrarJuegos();
+            webView.getEngine().load(null);
+            
             if (!scrollPane.isVisible()) {
                 scrollPane.setVisible(true);
                 contenedorApartados.setVisible(false);
-                
+
+                scrollPaneBiblioteca.setVisible(false);
                 scrollPaneCarrito.setVisible(false);
-                scrollPaneListaD.setVisible(false);                
+                scrollPaneListaD.setVisible(false);
             }
+            mostrarJuegosB();
+            mostrarJuegos();
+            mostrarJuegosC();
+            mostrarJuegosLD();
+        } else if (e.getSource().equals(btn_Biblioteca)) {
+            webView.getEngine().load(null);
+
+            if (!scrollPaneBiblioteca.isVisible()) {
+                scrollPaneBiblioteca.setVisible(true);
+                contenedorApartados.setVisible(false);
+
+                scrollPane.setVisible(false);
+                scrollPaneCarrito.setVisible(false);
+                scrollPaneListaD.setVisible(false);
+            }
+            mostrarJuegosB();
+            mostrarJuegos();
+            mostrarJuegosC();
+            mostrarJuegosLD();
         } else if (e.getSource().equals(btn_carrito)) {
             webView.getEngine().load(null);
-            mostrarJuegos();
             if (!scrollPaneCarrito.isVisible()) {
                 scrollPaneCarrito.setVisible(true);
                 scrollPane.setVisible(false);
+                scrollPaneBiblioteca.setVisible(false);
                 contenedorApartados.setVisible(false);
                 scrollPaneListaD.setVisible(false);
             }
+            mostrarJuegosB();
+            mostrarJuegos();
+            mostrarJuegosC();
+            mostrarJuegosLD();
         } else if (e.getSource().equals(btn_ListD)) {
             webView.getEngine().load(null);
             if (!scrollPaneListaD.isVisible()) {
                 scrollPaneCarrito.setVisible(false);
                 scrollPane.setVisible(false);
+                scrollPaneBiblioteca.setVisible(false);
                 contenedorApartados.setVisible(false);
                 scrollPaneListaD.setVisible(true);
             }
+            mostrarJuegosB();
+            mostrarJuegos();
+            mostrarJuegosC();
             mostrarJuegosLD();
         } else if (e.getSource().equals(btn_IrComrprar)) {
             webView.getEngine().load(null);
@@ -649,6 +671,7 @@ public class Controller_View_GAME_VERSE implements Initializable {
                 scrollPane.setVisible(false);
                 scrollPaneCarrito.setVisible(false);
                 panelDePago.setVisible(true);
+                scrollPaneBiblioteca.setVisible(false);
                 contenedorApartados.setVisible(false);
                 scrollPaneListaD.setVisible(false);
             }
@@ -791,15 +814,6 @@ public class Controller_View_GAME_VERSE implements Initializable {
             Panel_Cambiar_Clave.setVisible(false);
         } else if (e.getSource().equals(IrAhora)) {
             panelDePago.setVisible(true);
-
-//            for (int i = 0; i < flowpaneGamesCarrito.getChildren().size(); i++) {
-//
-//                Pane p = (Pane) flowpaneGamesCarrito.getChildren().get(i);
-//                enCarrito.add(p);
-//            }
-//            for (Pane pane : enCarrito) {
-//                FlowAcomprar.getChildren().add(pane);
-//            }
         }
     }
 
@@ -1065,6 +1079,34 @@ public class Controller_View_GAME_VERSE implements Initializable {
         }
     }
 
+    public void mostrarJuegosB() {
+        try {
+            Nodo_Juego juego1 = pila.getJuegoNick(labelNick.getText());
+
+            if (juego1 == null) {
+
+                System.out.println("No se encontró ningún juego para el usuario: " + labelNick.getText());
+                return;
+            }
+
+            if (!flowpaneGamesBiblioteca.getChildren().isEmpty()) {
+                Stack<Nodo_Juego> pilaJB = pila.getJuegosNick(juego1.getNickUser());
+
+                for (Nodo_Juego juego : pilaJB) {
+                    for (int a = 0; a < flowpaneGamesBiblioteca.getChildren().size(); a++) {
+                        Pane newPane = (Pane) flowpaneGamesBiblioteca.getChildren().get(a);
+                        String[] nombre = juego.getNombre().split(" ");
+                        if (!newPane.getId().equals(nombre[0])) {
+                            flowpaneGamesBiblioteca.getChildren().remove(a);
+                        }
+                    }
+                }
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Se produjo un error: " + e.getMessage());
+        }
+    }
+
     public void mostrarJuegosLD() {
         try {
             Nodo_Juego juego1 = pila.getJuegoNick2(labelNick.getText());
@@ -1084,6 +1126,34 @@ public class Controller_View_GAME_VERSE implements Initializable {
                         String[] nombre = juego.getNombre().split(" ");
                         if (newPane.getId().equals(nombre[0])) {
                             flowpaneGamesListaD.getChildren().remove(a);
+                        }
+                    }
+                }
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Se produjo un error: " + e.getMessage());
+        }
+    }
+
+    public void mostrarJuegosC() {
+        try {
+            Nodo_Juego juego1 = pila.getJuegoNick3(labelNick.getText());
+
+            if (juego1 == null) {
+
+                System.out.println("No se encontró ningún juego para el usuario: " + labelNick.getText());
+                return;
+            }
+
+            if (!flowpaneGamesCarrito.getChildren().isEmpty()) {
+                Stack<Nodo_Juego> pilaJC = pila.getJuegosNick3(juego1.getNickUser());
+
+                for (Nodo_Juego juego : pilaJC) {
+                    for (int a = 0; a < flowpaneGamesCarrito.getChildren().size(); a++) {
+                        Pane newPane = (Pane) flowpaneGamesCarrito.getChildren().get(a);
+                        String[] nombre = juego.getNombre().split(" ");
+                        if (newPane.getId().equals(nombre[0])) {
+                            flowpaneGamesCarrito.getChildren().remove(a);
                         }
                     }
                 }
@@ -1178,6 +1248,52 @@ public class Controller_View_GAME_VERSE implements Initializable {
         } else if (event.getSource().equals(cerrar_VPago)) {
             panelDePago.setVisible(false);
             scrollPane.setVisible(true);
+        } else if (event.getSource().equals(btn_Pagar)) {
+
+            if (!txtMetodoNequi.getText().isEmpty() || !txtMetodoTarjeta.getText().isEmpty() || !txtMetodoDaviPlata.getText().isEmpty()) {
+
+                FlowAcomprar.getChildren().remove(unicoAcomprar);
+                String titular = "";
+                if (!txtMetodoNequi.getText().isEmpty()) {
+                    titular = txtMetodoNequi.getText();
+                } else if (!txtMetodoDaviPlata.getText().isEmpty()) {
+                    titular = txtMetodoDaviPlata.getText();
+                } else {
+                    titular = labelNick.getText();
+                }
+                Alert a = new Alert(Alert.AlertType.WARNING);
+                a.setTitle("Advertencia..!");
+                a.setContentText("Compra exitosa..!!\n"
+                        + "Precio: " + txtPrecioPagar.getText() + "\n"
+                        + "Total: " + txtTotalPagar.getText() + "\n\n"
+                        + titular + "ya puedes encontrar tu juego en la biblioteca..!");
+                txtPrecioPagar.setText("$0,0");
+                txtTotalPagar.setText("$0,0");
+                a.showAndWait();
+
+                Stack<Nodo_Juego> aux = pila.getClonarJB();
+                Stack<Nodo_Juego> aux2 = pila.getClonarJC();
+                Nodo_Juego juegoAux = new Nodo_Juego(labelNick.getText(), "Red Dead", "/Images/Games_images/Ima_Red_Dead.png");
+                aux.add(juegoAux);
+                aux2.add(juegoAux);
+                
+                pila.guardarJuegos(aux);
+                pila.guardarJuegos3(aux2);
+                pila.cargarJuegos();
+                mostrarJuegosB();
+                mostrarJuegos();
+                mostrarJuegosC();
+                mostrarJuegosLD();
+                panelDePago.setVisible(false);
+                scrollPaneBiblioteca.setVisible(false);
+                scrollPane.setVisible(true);
+
+            } else {
+                Alert a = new Alert(Alert.AlertType.WARNING);
+                a.setTitle("Advertencia..!");
+                a.setContentText("Debes selecionar un metodo de pago...!");
+                a.show();
+            }
         }
     }
 
@@ -1326,6 +1442,79 @@ public class Controller_View_GAME_VERSE implements Initializable {
                 break;
             default:
                 throw new AssertionError();
+        }
+    }
+
+    @FXML
+    private void mandarListaD(ActionEvent event) {
+
+        Button btnAux = (Button) event.getSource();
+
+        switch (btnAux.getParent().getId()) {
+            case "Red":
+                Stack<Nodo_Juego> aux1 = pila.getClonarJC();
+
+                Nodo_Juego juego = new Nodo_Juego(labelNick.getText(), "Red Dead", "/Images/Games_images/Ima_Red_Dead.png");
+                aux1.add(juego);
+
+                pila.guardarJuegos3(aux1);
+
+                pila.cargarJuegos3();
+
+                mostrarJuegosC();
+                break;
+
+            default:
+                throw new AssertionError();
+        }
+    }
+
+    @FXML
+    private void mandarCarrito(ActionEvent event) {
+
+        Button btnAux = (Button) event.getSource();
+        switch (btnAux.getParent().getId()) {
+            case "Red":
+                Stack<Nodo_Juego> aux1 = pila.getClonarJC();
+                Stack<Nodo_Juego> aux2 = pila.getClonarJL();
+
+                Nodo_Juego juego = new Nodo_Juego(labelNick.getText(), "Red Dead", "/Images/Games_images/Ima_Red_Dead.png");
+                aux2.add(juego);
+
+                pila.eliminar3(aux1, "Red", labelNick.getText());
+
+                pila.guardarJuegos3(aux1);
+                pila.guardarJuegos2(aux2);
+
+                if (pila.limpiar2()) {
+                    pila.cargarJuegos2();
+                }
+
+                if (pila.limpiar3()) {
+                    pila.cargarJuegos3();
+                }
+
+                mostrarJuegosC();
+                mostrarJuegosLD();
+                break;
+
+            default:
+                throw new AssertionError();
+        }
+    }
+
+    @FXML
+    private void agrgarCarrito(ActionEvent event) {
+
+        if (M_Red.isVisible()) {
+            Stack<Nodo_Juego> aux = pila.getClonarJC();
+            pila.eliminar3(aux, "Red", labelNick.getText());
+
+            pila.guardarJuegos3(aux);
+
+            pila.cargarJuegos3();
+            flowpaneGamesCarrito.getChildren().clear();
+            mostrarJuegosC();
         }
     }
 }
